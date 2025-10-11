@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN STEPS</title>
+    <link rel="stylesheet" href="css/style.css">
+	    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+	    <style>
+        /* Estilos específicos para la página de contacto */
+        .contacto-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contacto-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contacto-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .contacto-section {
+            padding: 80px 0;
+        }
+
+        .contacto-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: #333;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-contacto h3 {
+            margin-bottom: 20px;
+            color: #b19354;
+            font-size: 1.5rem;
+        }
+
+        .info-contacto p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contacto-icon {
+            margin-right: 12px;
+            font-size: 1.4rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .whatsapp-icon {
+            color: #25D366;
+        }
+
+        .instagram-icon {
+            color: #E4405F;
+        }
+
+        .email-icon {
+            color: #b19354;
+        }
+
+        .location-icon {
+            color: #b19354;
+        }
+
+        .clock-icon {
+            color: #b19354;
+        }
+
+        .contacto-link {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contacto-link:hover {
+            color: #b19354;
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .formulario-contacto {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario-contacto h3 {
+            margin-bottom: 20px;
+            color: #b19354;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #b19354;
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-enviar {
+            background-color: #b19354;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            background-color: #9a7f45;
+        }
+
+        .faq-section {
+            background-color: #f1f1f1;
+            padding: 80px 0;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: #333;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-pregunta {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-pregunta:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-respuesta {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-respuesta {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .whatsapp-section {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .whatsapp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .whatsapp-info {
+            text-align: center;
+        }
+
+        .whatsapp-icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .whatsapp-btn {
+            background: white;
+            color: #25D366;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #f0f0f0;
+        }
+
+        .whatsapp-contact {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-numbers p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-phone {
+            color: #fff;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .whatsapp-phone:hover {
+            color: #d4f8e8;
+        }
+
+        .whatsapp-features {
+            margin-top: 30px;
+        }
+
+        .whatsapp-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .whatsapp-features li {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contacto-grid, .whatsapp-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contacto-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- CAMBIA ESTA PARTE -->
+            <div class="logo">
+                <img src="img/logo1.png" alt="Logo Mi Catálogo" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display: none;">URBAN STEPS</span>
+            </div>
+			<div class="logo">
+				<h2 style="color: #b19354;">URBAN STEPS </h2>
+				
+            </div>
+            <ul>
+                <li><a href="URBANSTEPS.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bienvenido a Nuestro Catálogo</h1>
+            <p>Descubre las mejores marcas de calzado deportivo y casual</p>
+            <a href="productos.html" class="btn-hero">Ver Productos</a>
+        </div>
+		
+    </section>
+
+    <!-- CARRUSEL DE PRODUCTOS DESTACADOS -->
+    <section class="carrusel-section">
+        <div class="container">
+            <h2>Productos Destacados</h2>
+            
+            <div class="carrusel-container">
+                <!-- Botones de navegación -->
+                <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+                <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+                
+                <!-- Contenedor del carrusel -->
+                <div class="carrusel">
+                    <!-- Producto 1 -->
+                    <div class="carrusel-item active">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760146825/CANVAS_00003_15028165-e1fd-4d36-846f-589a49583f08_xw78ra.webp" alt="Nike Air Max 270" 
+                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+                        <div class="producto-info">
+                            <h3>Nike SB Dunk Low x Jarritos</h3>
+                            <span class="precio">$1199.99</span>
+                            <a href="productos.html?marca=nike" class="btn-ver">Ver Nike</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <!-- Producto 3 -->
+                    <div class="carrusel-item">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760145101/RETRO4CACTUSJACK_2_4c221ece-2ac2-4fda-9f22-883cdd1211df_gsw11b.webp" alt="New Balance 574" 
+                             onerror="this.src='https://via.placeholder.com/400x300/2ecc71/ffffff?text=New+Balance+574'">
+                        <div class="producto-info">
+                            <h3>Jordan retro 4 Cactus Jack</h3>
+                            <span class="precio">$1499.99 </span>
+							<span class="precio"><s>$1899.99</s> </span>
+                            <a href="productos.html?marca=nike" class="btn-ver">Ver Nike</a>
+                        </div>
+                    </div>
+                
+				<!-- Producto 4 -->
+                    <div class="carrusel-item active">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760154469/RETRO1CHICAGORED_bo3v0h.webp" alt="Nike Air Max 270" 
+                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+                        <div class="producto-info">
+                            <h3>Nike Jordan Air Retro 1 Chicago Red</h3>
+                            <span class="precio">$1299.99</span>
+                            <a href="productos.html?marca=nike" class="btn-ver">Ver Nike</a>
+                        </div>
+                    </div>
+					<!-- Producto 5 -->
+                    <div class="carrusel-item active">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760149516/TRAVISLOWBLACKPHANTOM_2_s69oql.webp" alt="Nike Air Max 270" 
+                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+                        <div class="producto-info">
+                            <h3>Travis Low black phantom</h3>
+                            <span class="precio">$1299.99</span>
+                            <a href="productos.html?marca=nike" class="btn-ver">Ver Nike</a>
+                        </div>
+                    </div>
+					
+					
+                </div>
+                <!-- Indicadores/puntos -->
+                <div class="carrusel-indicadores">
+                    <span class="indicador active" onclick="irASlide(0)"></span>
+                    <span class="indicador" onclick="irASlide(1)"></span>
+                    <span class="indicador" onclick="irASlide(2)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE MARCAS CON IMÁGENES -->
+    <section class="marcas-section">
+        <div class="container">
+            <h2>Nuestras Marcas</h2>
+            <div class="grid-marcas">
+                <!-- Nike -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=nike'">
+                    <div class="marca-imagen">
+                        <img src="img/nike.png" alt="Nike" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/ffffff?text=NIKE'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>NIKE</h3>
+                        <p>Innovación y estilo deportivo</p>
+                        <span class="productos-count">116 productos</span>
+                    </div>
+                </div>
+
+                <!-- Adidas -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=adidas'">
+                    <div class="marca-imagen">
+                        <img src="img/adidas.png" alt="Adidas" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/ffffff?text=ADIDAS'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>ADIDAS</h3>
+                        <p>Performance y tradición</p>
+                        <span class="productos-count">52 productos</span>
+                    </div>
+                </div>
+
+                <!-- Converse -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=adidas'">
+                    <div class="marca-imagen">
+                        <img src="img/converse.png" alt="Converse" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/ffffff?text=CONVERSE'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>CONVERSE</h3>
+                        <p>Clásicos y tendencia</p>
+                        <span class="productos-count">5 productos</span>
+                    </div>
+                </div>
+
+                <!-- Vans -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=puma'">
+                    <div class="marca-imagen">
+                        <img src="img/vans.png" alt="Vans" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/ffffff?text=VANS'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>VANS</h3>
+                        <p>Cultura skate y urbana</p>
+                        <span class="productos-count">3 productos</span>
+                    </div>
+                </div>
+
+                <!-- Puma -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=puma'">
+                    <div class="marca-imagen">
+                        <img src="img/puma.png" alt="Puma" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/ff0000?text=PUMA'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>PUMA</h3>
+                        <p>Velocidad y estilo urbano</p>
+                        <span class="productos-count">14 productos</span>
+                    </div>
+                </div>
+
+                <!-- New Balance -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=new-balance'">
+                    <div class="marca-imagen">
+                        <img src="img/new-balance-logo-6.png" alt="New Balance" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/ce1126?text=NEW+BALANCE'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>NEW BALANCE</h3>
+                        <p>Calidad y comodidad</p>
+                        <span class="productos-count">11 productos</span>
+                    </div>
+                </div>
+
+                <!-- On Cloud -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=nike'">
+                    <div class="marca-imagen">
+                        <img src="img/oc.png" alt="On Cloud" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/e01e5a?text=ON+CLOUD'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>ON CLOUD</h3>
+                        <p>Fitness y entrenamiento</p>
+                        <span class="productos-count">10 productos</span>
+                    </div>
+                </div>
+
+                <!-- Skechers -->
+                <div class="marca-card" onclick="window.location.href='productos.html?marca=nike'">
+                    <div class="marca-imagen">
+                        <img src="https://i.pinimg.com/564x/af/6c/cc/af6ccc6867a36693fbea48f03e90da00.jpg" alt="sketcher" 
+                             onerror="this.src='https://via.placeholder.com/150x80/000000/ffffff?text=SKECHERS'">
+                    </div>
+                    <div class="marca-info">
+                        <h3>SKECHERS</h3>
+                        <p>Comodidad y estilo casual</p>
+                        <span class="productos-count">4 productos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE BENEFICIOS -->
+    <section class="beneficios-section">
+        <div class="container">
+            <h2>¿Por Qué Elegir urban steps?</h2>
+            <div class="grid-beneficios">
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">🚚</div>
+                    <h3>Envío Gratis</h3>
+                    <p>En compras mayores a 3 pares</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">💲​</div>
+                    <h3>Descuento del 10%</h3>
+                    <p>En compra de 3 pares se aplica 10% de descuento</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">🛡️</div>
+                    <h3>Garantía</h3>
+                    <p>6 meses en todos nuestros productos</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">💳</div>
+                    <h3>Pago Seguro</h3>
+                    <p>Transacciones 100% protegidas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- SCRIPT PARA EL CARRUSEL -->
+<script>
+// Carrusel functionality para index.html
+let slideIndex = 0;
+let intervalo;
+
+function mostrarSlide(n) {
+    const slides = document.getElementsByClassName("carrusel-item");
+    const indicadores = document.getElementsByClassName("indicador");
+    
+    // Ocultar todos los slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+    
+    // Remover active de todos los indicadores
+    for (let i = 0; i < indicadores.length; i++) {
+        indicadores[i].classList.remove("active");
+    }
+    
+    // Ajustar índice si se pasa de los límites
+    if (n >= slides.length) {
+        slideIndex = 0;
+    } else if (n < 0) {
+        slideIndex = slides.length - 1;
+    } else {
+        slideIndex = n;
+    }
+    
+    // Mostrar slide actual y activar indicador
+    slides[slideIndex].classList.add("active");
+    if (indicadores[slideIndex]) {
+        indicadores[slideIndex].classList.add("active");
+    }
+}
+
+function moverCarrusel(n) {
+    mostrarSlide(slideIndex + n);
+    resetAutoAvance();
+}
+
+function irASlide(n) {
+    mostrarSlide(n);
+    resetAutoAvance();
+}
+
+// Auto-avance cada 5 segundos
+function autoAvance() {
+    moverCarrusel(1);
+}
+
+function iniciarAutoAvance() {
+    intervalo = setInterval(autoAvance, 5000);
+}
+
+function resetAutoAvance() {
+    clearInterval(intervalo);
+    iniciarAutoAvance();
+}
+
+// Pausar auto-avance cuando el mouse está sobre el carrusel
+function configurarEventosCarrusel() {
+    const carruselContainer = document.querySelector('.carrusel-container');
+    if (carruelContainer) {
+        carruselContainer.addEventListener('mouseenter', () => {
+            clearInterval(intervalo);
+        });
+
+        carruselContainer.addEventListener('mouseleave', () => {
+            iniciarAutoAvance();
+        });
+    }
+}
+
+// Inicializar el carrusel cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    mostrarSlide(0);
+    iniciarAutoAvance();
+    configurarEventosCarrusel();
+    
+    console.log('✅ Carrusel inicializado correctamente');
+});
+</script>
+ <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos" 
+       class="whatsapp-float" 
+       target="_blank">
+       <img src="img/icons8-whatsapp-48.png">
+    </a>
+    <footer>
+        <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
+    </footer>
+
+
+</body>
+</html>

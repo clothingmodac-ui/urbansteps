@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - URBAN STEPS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <style>
+        /* Estilos específicos para la página de contacto */
+        .contacto-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contacto-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contacto-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .contacto-section {
+            padding: 80px 0;
+        }
+
+        .contacto-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: #333;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .info-contacto h3 {
+            margin-bottom: 20px;
+            color: #b19354;
+            font-size: 1.5rem;
+        }
+
+        .info-contacto p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .contacto-icon {
+            margin-right: 12px;
+            font-size: 1.4rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .whatsapp-icon {
+            color: #25D366;
+        }
+
+        .instagram-icon {
+            color: #E4405F;
+        }
+
+        .email-icon {
+            color: #b19354;
+        }
+
+        .location-icon {
+            color: #b19354;
+        }
+
+        .clock-icon {
+            color: #b19354;
+        }
+
+        .contacto-link {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contacto-link:hover {
+            color: #b19354;
+        }
+
+        .mapa iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .formulario-contacto {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario-contacto h3 {
+            margin-bottom: 20px;
+            color: #b19354;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #b19354;
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-enviar {
+            background-color: #b19354;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            background-color: #9a7f45;
+        }
+
+        .faq-section {
+            background-color: #f1f1f1;
+            padding: 80px 0;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: #333;
+        }
+
+        .faq-item {
+            background-color: white;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-pregunta {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .faq-pregunta:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-respuesta {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-respuesta {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .whatsapp-section {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .whatsapp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .whatsapp-info {
+            text-align: center;
+        }
+
+        .whatsapp-icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .whatsapp-btn {
+            background: white;
+            color: #25D366;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #f0f0f0;
+        }
+
+        .whatsapp-contact {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-numbers p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .whatsapp-phone {
+            color: #fff;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .whatsapp-phone:hover {
+            color: #d4f8e8;
+        }
+
+        .whatsapp-features {
+            margin-top: 30px;
+        }
+
+        .whatsapp-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .whatsapp-features li {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contacto-grid, .whatsapp-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contacto-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo1.png" alt="Logo Mi Catálogo" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display: none;">URBAN STEPS</span>
+            </div>
+            <div class="logo">
+                <h2 style="color: #b19354;">URBAN STEPS</h2>
+            </div>
+            <ul>
+                <li><a href="URBANSTEPS.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="contacto-hero">
+            <div class="hero-content">
+                <h1>Contáctanos</h1>
+                <p>Estamos aquí para ayudarte. Ponte en contacto con nosotros para cualquier consulta sobre nuestros productos.</p>
+            </div>
+        </section>
+
+
+
+        <!-- SECCIÓN WHATSAPP -->
+        <section class="whatsapp-section">
+            <div class="container">
+                <h2>Contacto por WhatsApp</h2>
+                <div class="whatsapp-grid">
+                    <div class="whatsapp-info">
+                        <div class="whatsapp-icon-large"><img src="img/icons8-whatsapp-48.png"width="50" height="50"></div>
+                        <h3>Chat Directo</h3>
+                        <p>¿Prefieres contactarnos por WhatsApp? Estamos disponibles para atenderte.</p>
+                        
+                        <div class="whatsapp-buttons">
+                            <button class="whatsapp-btn" onclick="openWhatsApp('525643915271', 'Hola, me interesa información sobre sus productos.')">
+                                💬 Consulta General
+                            </button>
+							<button class="whatsapp-btn" onclick="openWhatsApp('525643915271', 'Hola, quiero realizar un pedido.')">
+                                🛒 Realizar Pedido
+                            </button>
+                            
+                            <button class="whatsapp-btn" onclick="openWhatsApp('525643915271', 'Hola, necesito soporte con mi compra.')">
+                                🆘 Soporte Técnico
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="whatsapp-contact">
+                        <h2>Nuestro WhatsApp</h2>
+                        <div class="contact-numbers">
+						
+                            <p><strong>Ventas, pedidos y Soporte:</strong> <span class="whatsapp-phone" onclick="openWhatsApp('525643915271')"><img src="img/icons8-whatsapp-48.png"width="20" height="20"></span></p>
+                        </div>
+						<h2>Nuestro instagram</h2>
+                        <p><strong>Promociones y Referencias:</strong>
+						
+                            <span class="contacto-icon instagram-icon"></span>
+                            <a href="https://www.instagram.com/ac.urbansteps" target="_blank" class="contacto-link"><img src="img/icons8-instagram-48.png" width="20" height="20"></a>
+                        </p>
+						
+                        <div class="whatsapp-features">
+                            <h4>¿Por qué contactarnos?</h4>
+                            <ul>
+                                <li>✅ Respuesta inmediata</li>
+                                <li>✅ Envío de fotos</li>
+                                <li>✅ Asesoramiento personalizado</li>
+                                <li>✅ Confirmación rápida de pedidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE PREGUNTAS FRECUENTES -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Preguntas Frecuentes</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-pregunta">
+                        <span>¿Cuáles son los métodos de pago aceptados?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>Efectivo, transferencias bancarias y PayPal.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-pregunta">
+                        <span>¿Cuánto tiempo tarda el envío?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>El tiempo de envío varía según la ubicación. Generalmente, los pedidos nacionales tardan de 3 a 5 días hábiles despues del pago total</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-pregunta">
+                        <span>¿Ofrecen envío gratuito?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>Sí, ofrecemos envío gratuito en compras de 3 pares en adelante. Para compras menores, el costo de envío se calcula al momento de la compra.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="faq-item">
+                    <div class="faq-pregunta">
+                        <span>¿Cómo sé mi talla correcta?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-respuesta">
+                        <p>En la página de cada producto encontrarás una guía de tallas. Si necesitas ayuda adicional, no dudes en contactar y te asesoraremos para que elijas la talla correcta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos" 
+       class="whatsapp-float" 
+       target="_blank">
+       <img src="img/icons8-whatsapp-48.png">
+    </a>
+
+    <footer>
+        <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
+    </footer>
+
+    <script>
+        // Función para abrir WhatsApp
+        function openWhatsApp(phone, message = 'Hola, me interesa información sobre sus productos.') {
+            const cleanPhone = phone.replace(/\D/g, '');
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-pregunta').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentNode;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+            this.reset();
+        });
+
+        // WhatsApp functionality para botones
+        document.querySelectorAll('.whatsapp-btn, .whatsapp-phone').forEach(element => {
+            element.addEventListener('click', function() {
+                const phone = '525643915271'; // Tu número fijo
+                const message = this.getAttribute('data-message') || 'Hola, me interesa información sobre sus productos.';
+                openWhatsApp(phone, message);
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
