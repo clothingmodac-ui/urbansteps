@@ -6,134 +6,54 @@
     <title>Productos - URBAN STEPS</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .productos-estaticos {
+        .marcas-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            padding: 1rem 0;
+            padding: 2rem 0;
         }
         
-        .marca-seccion {
-            margin-bottom: 4rem;
-            padding: 2rem;
+        .marca-card {
             background: white;
+            padding: 2rem;
             border-radius: 15px;
+            text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
         
-        .marca-titulo {
+        .marca-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .marca-imagen {
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        
+        .marca-imagen img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .marca-info h3 {
             color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
         }
         
         .contador-marca {
             background: #3498db;
             color: white;
-            padding: 8px 16px;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: bold;
-        }
-        
-        .filtros-estaticos {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 3rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .navegacion-rapida {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-            justify-content: center;
-        }
-        
-        .btn-navegacion {
-            padding: 10px 20px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        .btn-navegacion:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
-        }
-        
-        .info-filtros {
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-        
-        .volver-arriba {
-            position: fixed;
-            bottom: 90px;
-            right: 30px;
-            background: #3498db;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-            z-index: 999;
-            transition: all 0.3s ease;
-        }
-        
-        .volver-arriba:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
-        }
-        
-        .separador-marca {
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #3498db, transparent);
-            margin: 3rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .marca-titulo {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .navegacion-rapida {
-                gap: 0.5rem;
-            }
-            
-            .btn-navegacion {
-                padding: 8px 16px;
-                font-size: 0.8rem;
-            }
-            
-            .volver-arriba {
-                bottom: 80px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
         }
     </style>
 </head>
@@ -156,573 +76,119 @@
 
     <main>
         <section class="hero-productos">
-            <h1>Nuestros Productos</h1>
-            <p>Descubre nuestra amplia selección de calzado deportivo y casual</p>
-        </section>
-
-        <section class="filtros-estaticos">
-            <div class="container">
-                <h2>Navegación Rápida por Marcas</h2>
-                <div class="navegacion-rapida">
-                    <a href="#nike" class="btn-navegacion">NIKE (116)</a>
-                    <a href="#adidas" class="btn-navegacion">ADIDAS (52)</a>
-                    <a href="#puma" class="btn-navegacion">PUMA (14)</a>
-                    <a href="#vans" class="btn-navegacion">VANS (3)</a>
-                    <a href="#converse" class="btn-navegacion">CONVERSE (5)</a>
-                    <a href="#new-balance" class="btn-navegacion">NEW BALANCE (11)</a>
-                    <a href="#on-cloud" class="btn-navegacion">ON CLOUD (10)</a>
-                    <a href="#skechers" class="btn-navegacion">SKECHERS (4)</a>
-                </div>
-                <p class="info-filtros">Total: <strong>215 productos</strong> disponibles</p>
-            </div>
+            <h1>Nuestras Marcas</h1>
+            <p>Selecciona una marca para ver todos sus productos</p>
         </section>
 
         <section class="productos-section">
             <div class="container">
-                
-                <!-- NIKE - 116 PRODUCTOS -->
-                <div class="marca-seccion" id="nike">
-                    <div class="marca-titulo">
-                        <h2>NIKE</h2>
-                        <span class="contador-marca">116 productos</span>
-                    </div>
-                    <div class="productos-estaticos">
-                        
-                        <!-- Productos NIKE 1-10 -->
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073505/af1blancototal_kfhcy5.png" alt="Air Force 1 Blanco total" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Air Force 1 Blanco total</h3>
-                                <div class="precio-oferta"><s>$1199.99</s> <span class="precio-actual">$999.99</span> <span class="descuento">-17%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20Force%201%20Blanco%20total%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                <div class="marcas-grid">
+                    
+                    <!-- NIKE -->
+                    <a href="nike.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="img/nike.png" alt="Nike">
                         </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073506/af1negrototal_thac0a.png" alt="Air Force 1 negro total" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Air Force 1 negro total</h3>
-                                <div class="precio-oferta"><s>$1099.99</s> <span class="precio-actual">$949.99</span> <span class="descuento">-14%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20Force%201%20negro%20total%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                        <div class="marca-info">
+                            <h3>NIKE</h3>
+                            <p>Innovación y estilo deportivo</p>
+                            <span class="contador-marca">116 productos</span>
                         </div>
+                    </a>
 
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073533/justblanconegro_cgrxbi.png" alt="Air Force 1 Just Do it negro" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Air Force 1 Just Do it negro</h3>
-                                <div class="producto-precio">$979.99</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20Force%201%20Just%20Do%20it%20negro%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                    <!-- ADIDAS -->
+                    <a href="adidas.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="img/adidas.png" alt="Adidas">
                         </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073537/pegasus2_aqvxxx.png" alt="Pegasus rojo plata" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Pegasus rojo plata</h3>
-                                <div class="producto-precio">$889.00</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Pegasus%20rojo%20plata%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                        <div class="marca-info">
+                            <h3>ADIDAS</h3>
+                            <p>Performance y tradición</p>
+                            <span class="contador-marca">52 productos</span>
                         </div>
+                    </a>
 
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073536/pegasus1_l4sgy8.png" alt="Pegasus plata negro" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Pegasus plata negro</h3>
-                                <div class="producto-precio">$889.00</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Pegasus%20plata%20negro%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                    <!-- PUMA -->
+                    <a href="puma.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="img/puma.png" alt="Puma">
                         </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073537/pegasus3_udpcvx.png" alt="Pegasus negro rojo" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Pegasus negro rojo</h3>
-                                <div class="producto-precio">$889.00</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Pegasus%20negro%20rojo%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                        <div class="marca-info">
+                            <h3>PUMA</h3>
+                            <p>Velocidad y estilo urbano</p>
+                            <span class="contador-marca">14 productos</span>
                         </div>
+                    </a>
 
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073537/pegasus4_sa5raw.png" alt="Pegasus plata oxford" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Pegasus plata oxford</h3>
-                                <div class="producto-precio">$889.00</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Pegasus%20plata%20oxford%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                    <!-- VANS -->
+                    <a href="vans.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="img/vans.png" alt="Vans">
                         </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073484/af1blancolila_apzfqf.png" alt="Air force 1 lila con blanco" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Air force 1 lila con blanco</h3>
-                                <div class="producto-precio">$999.99</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%201%20lila%20con%20blanco%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                        <div class="marca-info">
+                            <h3>VANS</h3>
+                            <p>Cultura skate y urbana</p>
+                            <span class="contador-marca">3 productos</span>
                         </div>
+                    </a>
 
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073485/af1blancorosa_fm265s.png" alt="Air force 1 rosa" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Air force 1 rosa</h3>
-                                <div class="producto-precio">$999.99</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%201%20rosa%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                    <!-- CONVERSE -->
+                    <a href="converse.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="img/converse.png" alt="Converse">
                         </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073484/af1blanconegroglass_cj8iiy.png" alt="Air force 1 blanco y negro brilloso" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Air force 1 blanco y negro brilloso</h3>
-                                <div class="precio-oferta"><s>$1099.99</s> <span class="precio-actual">$999.99</span> <span class="descuento">-9%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%201%20blanco%20y%20negro%20brilloso%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                        <div class="marca-info">
+                            <h3>CONVERSE</h3>
+                            <p>Clásicos y tendencia</p>
+                            <span class="contador-marca">5 productos</span>
                         </div>
+                    </a>
 
-                        <!-- Continúan 106 productos más de Nike... -->
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760145101/RETRO4CACTUSJACK_2_4c221ece-2ac2-4fda-9f22-883cdd1211df_gsw11b.webp" alt="Retro 4 Cactus Jack" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">NIKE</span>
-                                <h3 class="producto-nombre">Retro 4 Cactus Jack</h3>
-                                <div class="precio-oferta"><s>$1899.99</s> <span class="precio-actual">$1499.99</span> <span class="descuento">-21%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Retro%204%20Cactus%20Jack%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
+                    <!-- NEW BALANCE -->
+                    <a href="new-balance.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="img/new-balance-logo-6.png" alt="New Balance">
                         </div>
+                        <div class="marca-info">
+                            <h3>NEW BALANCE</h3>
+                            <p>Calidad y comodidad</p>
+                            <span class="contador-marca">11 productos</span>
+                        </div>
+                    </a>
 
-                    </div>
+                    <!-- ON CLOUD -->
+                    <a href="on-cloud.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="img/oc.png" alt="On Cloud">
+                        </div>
+                        <div class="marca-info">
+                            <h3>ON CLOUD</h3>
+                            <p>Fitness y entrenamiento</p>
+                            <span class="contador-marca">10 productos</span>
+                        </div>
+                    </a>
+
+                    <!-- SKECHERS -->
+                    <a href="skechers.html" class="marca-card">
+                        <div class="marca-imagen">
+                            <img src="https://i.pinimg.com/564x/af/6c/cc/af6ccc6867a36693fbea48f03e90da00.jpg" alt="Skechers">
+                        </div>
+                        <div class="marca-info">
+                            <h3>SKECHERS</h3>
+                            <p>Comodidad y estilo casual</p>
+                            <span class="contador-marca">4 productos</span>
+                        </div>
+                    </a>
+
                 </div>
-
-                <div class="separador-marca"></div>
-
-                <!-- ADIDAS - 52 PRODUCTOS -->
-                <div class="marca-seccion" id="adidas">
-                    <div class="marca-titulo">
-                        <h2>ADIDAS</h2>
-                        <span class="contador-marca">52 productos</span>
-                    </div>
-                    <div class="productos-estaticos">
-                        
-                        <!-- Productos ADIDAS 1-10 -->
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073443/adidasadvantageblancototal_on6zis.png" alt="Advantage blanco" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">ADIDAS</span>
-                                <h3 class="producto-nombre">Advantage blanco</h3>
-                                <div class="precio-oferta"><s>$1099.99</s> <span class="precio-actual">$899.99</span> <span class="descuento">-18%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Advantage%20blanco%20de%20Adidas" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
-                        </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073447/adidasadvantagenegrototal_xcy8ju.png" alt="Advantage negro" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">ADIDAS</span>
-                                <h3 class="producto-nombre">Advantage negro</h3>
-                                <div class="precio-oferta"><s>$1099.99</s> <span class="precio-actual">$899.99</span> <span class="descuento">-18%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Advantage%20negro%20de%20Adidas" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
-                        </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073434/superstarnegro_c8vhw9.png" alt="Superstar negro total" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">ADIDAS</span>
-                                <h3 class="producto-nombre">Superstar negro total</h3>
-                                <div class="precio-oferta"><s>$1499.99</s> <span class="precio-actual">$949.99</span> <span class="descuento">-37%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Superstar%20negro%20total%20de%20Adidas" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
-                        </div>
-
-                        <!-- Continúan 42 productos más de Adidas... -->
-
-                    </div>
-                </div>
-
-                <div class="separador-marca"></div>
-
-                <!-- PUMA - 14 PRODUCTOS -->
-                <div class="marca-seccion" id="puma">
-                    <div class="marca-titulo">
-                        <h2>PUMA</h2>
-                        <span class="contador-marca">14 productos</span>
-                    </div>
-                    <div class="productos-estaticos">
-                        
-                        <!-- Productos PUMA completos -->
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073588/SMASHBLANCOVERDE_lqttcm.png" alt="Smash blanco con verde" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">PUMA</span>
-                                <h3 class="producto-nombre">Smash blanco con verde</h3>
-                                <div class="precio-oferta"><s>$1199.99</s> <span class="precio-actual">$899.99</span> <span class="descuento">-25%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Smash%20blanco%20con%20verde%20de%20Puma" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
-                        </div>
-
-                        <!-- Continúan 13 productos más de Puma... -->
-
-                    </div>
-                </div>
-
-                <div class="separador-marca"></div>
-
-                <!-- VANS - 3 PRODUCTOS -->
-                <div class="marca-seccion" id="vans">
-                    <div class="marca-titulo">
-                        <h2>VANS</h2>
-                        <span class="contador-marca">3 productos</span>
-                    </div>
-                    <div class="productos-estaticos">
-                        
-                        <!-- Productos VANS completos -->
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/vansoldb_gxk3gn.jpg" alt="Old Skool" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">VANS</span>
-                                <h3 class="producto-nombre">Old Skool</h3>
-                                <div class="precio-oferta"><s>$1199.99</s> <span class="precio-actual">$799.99</span> <span class="descuento">-33%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Old%20Skool%20de%20Vans" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
-                        </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/vansoldn_cdmztp.png" alt="Old Skool 2" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">VANS</span>
-                                <h3 class="producto-nombre">Old Skool 2</h3>
-                                <div class="precio-oferta"><s>$1199.99</s> <span class="precio-actual">$799.99</span> <span class="descuento">-33%</span></div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Old%20Skool%202%20de%20Vans" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
-                        </div>
-
-                        <div class="producto-card">
-                            <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073621/VANSNEGROTOTALward_fuxmnx.png" alt="Ward" class="producto-imagen">
-                            <div class="producto-info">
-                                <span class="producto-marca">VANS</span>
-                                <h3 class="producto-nombre">Ward</h3>
-                                <div class="producto-precio">$799.99</div>
-                                <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-                                <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Ward%20de%20Vans" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-                            </div>
-                        </div>
-                        <!-- ========== NIKE - 106 PRODUCTOS FALTANTES ========== -->
-
-<!-- Nike 11-20 -->
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073508/af1rosalila_rzuwrk.png" alt="Air force 1 rosa lila" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air force 1 rosa lila</h3>
-        <div class="producto-precio">$999.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%201%20rosa%20lila%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073532/justblancomorado_jxo7dy.png" alt="Air force Just Do it morado" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air force Just Do it morado</h3>
-        <div class="producto-precio">$999.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%20Just%20Do%20it%20morado%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073484/af1blanconegro_vvuxye.png" alt="Air force 1" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air force 1</h3>
-        <div class="producto-precio">$999.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%201%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073485/af1blancolilaglass_zz8wa8.png" alt="Air force 1 lila" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air force 1 lila</h3>
-        <div class="producto-precio">$999.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%201%20lila%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073508/af1plataglitter_ggwo00.png" alt="Air force 1 blanco glitter plata" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air force 1 blanco glitter plata</h3>
-        <div class="precio-oferta"><s>$1199.99</s> <span class="precio-actual">$999.99</span> <span class="descuento">-17%</span></div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20force%201%20blanco%20glitter%20plata%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073504/af1blancotm_mnlehv.png" alt="Air TM blanco" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air TM blanco</h3>
-        <div class="producto-precio">$979.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20TM%20blanco%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073508/af1negrotm_g2m9x0.png" alt="Air TM negro" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air TM negro</h3>
-        <div class="producto-precio">$979.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20TM%20negro%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073537/SUPREMEBLANCO_bgof2e.png" alt="Supreme blanco" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Supreme blanco</h3>
-        <div class="producto-precio">$1009.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Supreme%20blanco%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073538/SUPREMENEGRO_z4a3ca.png" alt="Supreme negro" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Supreme negro</h3>
-        <div class="producto-precio">$1009.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Supreme%20negro%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073534/EVOLUTIONBLANCOTOTAL_ujd01w.png" alt="Air Evolution blanco total" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NIKE</span>
-        <h3 class="producto-nombre">Air Evolution blanco total</h3>
-        <div class="producto-precio">$999.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Air%20Evolution%20blanco%20total%20de%20Nike" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<!-- Continúan 96 productos más de Nike... -->
-
-<!-- ========== ADIDAS - 49 PRODUCTOS FALTANTES ========== -->
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073481/runnerplata_cda5n8.png" alt="Runner plata con blanco" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">ADIDAS</span>
-        <h3 class="producto-nombre">Runner plata con blanco</h3>
-        <div class="producto-precio">$899.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Runner%20plata%20con%20blanco%20de%20Adidas" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073446/runneroxford_wr74tq.png" alt="Runner oxford" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">ADIDAS</span>
-        <h3 class="producto-nombre">Runner oxford</h3>
-        <div class="producto-precio">$899.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Runner%20oxford%20de%20Adidas" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<!-- Continúan 47 productos más de Adidas... -->
-
-<!-- ========== PUMA - 13 PRODUCTOS FALTANTES ========== -->
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073591/SMASHBLANCOTOTAL_hix9h2.png" alt="Smash blanco total" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">PUMA</span>
-        <h3 class="producto-nombre">Smash blanco total</h3>
-        <div class="precio-oferta"><s>$1199.99</s> <span class="precio-actual">$899.99</span> <span class="descuento">-25%</span></div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Smash%20blanco%20total%20de%20Puma" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760073590/SMASHBLANCONEGRO_ehzpul.png" alt="Smash blanco con negro" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">PUMA</span>
-        <h3 class="producto-nombre">Smash blanco con negro</h3>
-        <div class="precio-oferta"><s>$1199.99</s> <span class="precio-actual">$899.99</span> <span class="descuento">-25%</span></div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20Smash%20blanco%20con%20negro%20de%20Puma" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<!-- Continúan 11 productos más de Puma... -->
-
-<!-- ========== CONVERSE - 4 PRODUCTOS FALTANTES ========== -->
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760161082/CANVAS_00013_10_ac37f24d-0bed-4504-9008-64e6bbc8c573_haglcx.webp" alt="Bota blanco" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">CONVERSE</span>
-        <h3 class="producto-nombre">Bota blanco</h3>
-        <div class="producto-precio">$699.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20la%20Bota%20blanco%20de%20Converse" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760161765/CANVAS_00027_a45dfe96-64cd-44dc-ac2a-6774882a11ad_yckbga.webp" alt="Bota negro corazon" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">CONVERSE</span>
-        <h3 class="producto-nombre">Bota negro corazon</h3>
-        <div class="producto-precio">$699.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20la%20Bota%20negro%20corazon%20de%20Converse" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<!-- Continúan 2 productos más de Converse... -->
-
-<!-- ========== NEW BALANCE - 10 PRODUCTOS FALTANTES ========== -->
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760153029/CANVAS_00001_14_acf581e5-b586-49cd-9d75-d4dcdb8aec35_gpfrnn.webp" alt="550 blanco y negro" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NEW BALANCE</span>
-        <h3 class="producto-nombre">550 blanco y negro</h3>
-        <div class="producto-precio">$1335.00</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20550%20blanco%20y%20negro%20de%20New%20Balance" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760153076/CANVAS_00002_17_d46233e6-188c-421e-be7c-192a9f920003_xangcm.webp" alt="550 blanco y verde" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">NEW BALANCE</span>
-        <h3 class="producto-nombre">550 blanco y verde</h3>
-        <div class="producto-precio">$1335.00</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20550%20blanco%20y%20verde%20de%20New%20Balance" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<!-- Continúan 8 productos más de New Balance... -->
-
-<!-- ========== ON CLOUD - 9 PRODUCTOS FALTANTES ========== -->
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760158276/TENISONCLOUDMONSTERCINDERFOGIMPORTADO_bo1aqe.webp" alt="On Cloudmonster cinder for IMPORTADO" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">ON CLOUD</span>
-        <h3 class="producto-nombre">On Cloudmonster cinder for IMPORTADO</h3>
-        <div class="producto-precio">$2699.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20On%20Cloudmonster%20cinder%20for%20IMPORTADO" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<div class="producto-card">
-    <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760158410/TENISONCLOUDMONSTERGRISIMPORTADO_hbuo1t.webp" alt="On Cloudmonster gris IMPORTADO" class="producto-imagen">
-    <div class="producto-info">
-        <span class="producto-marca">ON CLOUD</span>
-        <h3 class="producto-nombre">On Cloudmonster gris IMPORTADO</h3>
-        <div class="producto-precio">$2699.99</div>
-        <div class="tallas-disponibles"><strong>Tallas:</strong><div class="tallas-grid"><span class="talla-item">22</span><span class="talla-item">22.5</span><span class="talla-item">23</span><span class="talla-item">23.5</span><span class="talla-item">24</span><span class="talla-item">24.5</span><span class="talla-item">25</span><span class="talla-item">25.5</span><span class="talla-item">26</span><span class="talla-item">26.5</span><span class="talla-item">27</span><span class="talla-item">27.5</span><span class="talla-item">28</span><span class="talla-item">28.5</span><span class="talla-item">29</span><span class="talla-item">29.5</span></div></div>
-        <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20el%20On%20Cloudmonster%20gris%20IMPORTADO" class="btn-detalles" target="_blank">Consultar por WhatsApp</a>
-    </div>
-</div>
-
-<!-- Continúan 7 productos más de On Cloud... -->
-
-                    </div>
-                </div>
-
-                <!-- Continúan las demás marcas... -->
-
             </div>
         </section>
     </main>
 
-    <a href="#" class="volver-arriba">↑</a>
-
     <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos" class="whatsapp-float" target="_blank">
-       <img src="img/icons8-whatsapp-48.png" alt="WhatsApp">
+        <img src="img/icons8-whatsapp-48.png" alt="WhatsApp">
     </a>
-<script>
-// Carga progresiva de productos
-document.addEventListener('DOMContentLoaded', function() {
-    const productosContainer = document.querySelector('.productos-estaticos');
-    const marcas = document.querySelectorAll('.marca-seccion');
-    
-    // Ocultar todas las marcas excepto la primera
-    marcas.forEach((marca, index) => {
-        if (index > 0) {
-            marca.style.display = 'none';
-        }
-    });
-    
-    // Navegación entre marcas
-    document.querySelectorAll('.btn-navegacion').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const marcaId = this.getAttribute('href').replace('#', '');
-            
-            // Ocultar todas las marcas
-            marcas.forEach(marca => {
-                marca.style.display = 'none';
-            });
-            
-            // Mostrar marca seleccionada
-            document.getElementById(marcaId).style.display = 'block';
-        });
-    });
-});
-</script>
+
     <footer>
         <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
     </footer>
