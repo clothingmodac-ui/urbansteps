@@ -693,17 +693,38 @@
     <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos" class="whatsapp-float" target="_blank">
        <img src="img/icons8-whatsapp-48.png" alt="WhatsApp">
     </a>
-
+<script>
+// Carga progresiva de productos
+document.addEventListener('DOMContentLoaded', function() {
+    const productosContainer = document.querySelector('.productos-estaticos');
+    const marcas = document.querySelectorAll('.marca-seccion');
+    
+    // Ocultar todas las marcas excepto la primera
+    marcas.forEach((marca, index) => {
+        if (index > 0) {
+            marca.style.display = 'none';
+        }
+    });
+    
+    // Navegación entre marcas
+    document.querySelectorAll('.btn-navegacion').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const marcaId = this.getAttribute('href').replace('#', '');
+            
+            // Ocultar todas las marcas
+            marcas.forEach(marca => {
+                marca.style.display = 'none';
+            });
+            
+            // Mostrar marca seleccionada
+            document.getElementById(marcaId).style.display = 'block';
+        });
+    });
+});
+</script>
     <footer>
         <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
     </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
