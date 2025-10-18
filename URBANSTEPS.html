@@ -420,7 +420,6 @@
                         <div class="producto-info">
                             <h6>Nike Jordan Air Retro 1 Chicago Red</h6>
                             <span class="precio">$1299.99</span>
-                            <a href="productos.html?marca=nike" class="btn-ver">Ver Nike</a>
                         </div>
                     </div>
 					<!-- Producto 5 -->
@@ -444,7 +443,64 @@
             </div>
         </div>
     </section>
-
+	
+    <!-- CARRUSEL DE PRODUCTOS NUEVOS -->
+    <section class="carrusel-section">
+        <div class="container">
+            <h2>Productos Nuevos</h2>
+            
+            <div class="carrusel-container">
+                <!-- Botones de navegación -->
+                <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+                <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+                
+                <!-- Contenedor del carrusel -->
+                <div class="carrusel">
+                    <!-- Producto 1 -->
+                    <div class="carrusel-item active">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753188/CANVAS_00002_8_9fb3d44c-c7fd-43a6-a60c-e868e7000d15_hzjsdj.webp" alt="Nike Air Max 270" 
+                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+                        <div class="producto-info">
+                            <h6>Air Force 1 DIOR lila</h6><span class="precio">$799.99</span>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <!-- Producto 2 -->
+           <div class="carrusel-item active">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753407/CANVAS_00001_a97cc2fc-6ab7-4a29-a1db-9bf6fa3863cf_w3bkfu.webp" alt="Nike Air Max 270" 
+                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+                        <div class="producto-info">
+                            <h6>Air Force 1 DIOR negro</h6><span class="precio">$799.99</span>
+                            
+                        </div>
+                    </div>
+                
+				<!-- Producto 3 -->
+                    <div class="carrusel-item active">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753751/HELLOKITTYBLANCONEGROROSA_1_cgvglw.webp" alt="Nike Air Max 270" 
+                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+                        <div class="producto-info">
+                            <h6>Air Retro 1 Hello Kitty</h6>
+                            <span class="precio">$1099.99</span>
+                        </div>
+                    </div>
+					<!-- Producto 5 -->
+                   
+					
+					
+                </div>
+                <!-- Indicadores/puntos -->
+                <div class="carrusel-indicadores">
+                    <span class="indicador active" onclick="irASlide(0)"></span>
+                    <span class="indicador" onclick="irASlide(1)"></span>
+                    <span class="indicador" onclick="irASlide(2)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- SECCIÓN DE BENEFICIOS -->
     <section class="beneficios-section">
         <div class="container">
@@ -572,6 +628,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
