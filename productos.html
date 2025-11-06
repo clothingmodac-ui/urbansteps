@@ -8,7 +8,7 @@
     
     <style>
         /* =========================================
-           VARIABLES Y ESTILOS BASE (Generales y Específicos de Productos)
+           VARIABLES Y ESTILOS BASE (Mismos que en la página de inicio)
            ========================================= */
         :root {
             --color-primario: #b19354; /* Color dorado/ocre de tu marca */
@@ -30,8 +30,27 @@
             margin: 0 auto;
             padding: 0 15px;
         }
+        
+        /* TÍTULOS DE SECCIÓN */
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--color-secundario);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-primario);
+            margin: 10px auto 0;
+        }
 
-        /* --- HEADER Y NAV (CORREGIDO) --- */
+        /* --- HEADER Y NAV (Ajuste del CSS de inicio) --- */
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -83,13 +102,13 @@
             transition: color 0.3s ease, border-bottom 0.3s ease;
         }
 
-        /* Destacar la página de Productos, ya que es la actual */
+        /* Destacar la página de Productos */
         header nav ul li a:hover, header nav ul li a[href="productos.html"] {
             color: var(--color-primario);
             border-bottom: 2px solid var(--color-primario);
         }
 
-        /* --- HERO DE PRODUCTOS --- */
+        /* --- HERO DE PRODUCTOS (Cambio de fondo para diferenciar) --- */
         .hero-productos {
             background-color: var(--color-secundario);
             color: white;
@@ -111,28 +130,9 @@
 
         /* --- ESTILOS DE GRID DE MARCAS --- */
         .productos-section {
+            padding-top: 20px;
             padding-bottom: 80px;
         }
-        
-        /* Título de sección */
-        .productos-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: var(--color-secundario);
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .productos-section h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--color-primario);
-            margin: 10px auto 0;
-        }
-
 
         .marcas-grid {
             display: grid;
@@ -171,7 +171,9 @@
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
-            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
+            /* Si las imágenes de tus logos tienen fondo blanco,
+               este filtro ayuda a que no se vean mal en fondos claros. */
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1)); 
         }
         
         .marca-info h3 {
@@ -191,7 +193,7 @@
             margin-top: 10px;
         }
 
-        /* --- FOOTER Y WHATSAPP --- */
+        /* --- FOOTER Y WHATSAPP (Mismos que en la página de inicio) --- */
         footer {
             background-color: var(--color-secundario);
             color: white;
@@ -224,18 +226,10 @@
         }
         
         /* =========================================
-           MEDIA QUERY PARA MÓVILES
+           MEDIA QUERY PARA MÓVILES (Mismo que en la página de inicio)
            ========================================= */
         @media (max-width: 768px) {
-            /* Adaptación del HERO */
-            .hero-productos h1 {
-                font-size: 2.5rem;
-            }
-            .hero-productos p {
-                font-size: 1rem;
-            }
-
-            /* Adaptación del NAV (CORREGIDO) */
+            /* Adaptación del NAV */
             header nav {
                 flex-direction: column; 
                 align-items: flex-start; 
@@ -243,13 +237,14 @@
             }
             
             header nav ul {
-                display: none; /* Ocultamos el menú principal para limpiar el header */
-            }
-            
-            .logo h2 {
-                font-size: 1.5rem;
+                display: none; 
             }
 
+            /* Adaptación del HERO */
+            .hero-productos h1 {
+                font-size: 2.5rem;
+            }
+            
             /* Asegurar que la cuadrícula de marcas se ajuste bien */
             .marcas-grid {
                 grid-template-columns: 1fr; /* Una columna en móvil */
