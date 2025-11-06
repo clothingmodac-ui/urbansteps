@@ -380,78 +380,39 @@
     </section>
 
     <!-- CARRUSEL DE PRODUCTOS DESTACADOS -->
-    <section class="carrusel-section">
-        <div class="container">
-            <h2>Productos Destacados</h2>
-            
-            <div class="carrusel-container">
-                <!-- Botones de navegación -->
-                <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-                <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
-                
-                <!-- Contenedor del carrusel -->
-                <div class="carrusel">
-                    <!-- Producto 1 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760146825/CANVAS_00003_15028165-e1fd-4d36-846f-589a49583f08_xw78ra.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Nike SB Dunk Low x Jarritos</h6><span class="precio">$1199.99</span>
-                            
-                        </div>
-                    </div>
-                      <!-- Producto 2 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1761072336/TENISDUNKLOWPANDAIMPORTADO_vcbmul.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Nike SB Dunk panda IMPORTADO</h6><span class="precio">$1499.99</span>
-                            
-                        </div>
-                    </div>                  
-                    
-                    
-                    <!-- Producto 3 -->
-                    <div class="carrusel-item">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760145101/RETRO4CACTUSJACK_2_4c221ece-2ac2-4fda-9f22-883cdd1211df_gsw11b.webp" alt="New Balance 574" 
-                             onerror="this.src='https://via.placeholder.com/400x300/2ecc71/ffffff?text=New+Balance+574'">
-                        <div class="producto-info">
-                            <h6>Jordan retro 4 Cactus Jack</h6><span class="precio">$1499.99 </span><span class="precio"><s>$1899.99</s> </span>
-                            
-                        </div>
-                    </div>
-                
-				<!-- Producto 4 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760154469/RETRO1CHICAGORED_bo3v0h.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Nike Jordan Air Retro 1 Chicago Red</h6>
-                            <span class="precio">$1299.99</span>
-                        </div>
-                    </div>
-					<!-- Producto 5 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760149516/TRAVISLOWBLACKPHANTOM_2_s69oql.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Travis Low black phantom</h6><span class="precio">$1299.99</span>
-                            
-                        </div>
-                    </div>
-					
-					
-					
-                </div>
-                <!-- Indicadores/puntos -->
-                <div class="carrusel-indicadores">
-                    <span class="indicador active" onclick="irASlide(0)"></span>
-                    <span class="indicador" onclick="irASlide(1)"></span>
-                    <span class="indicador" onclick="irASlide(2)"></span>
-                </div>
-            </div>
+<div class="carrusel">
+    <div class="carrusel-item active"> 
+        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760146825/CANVAS_00003_15028165-e1fd-4d36-846f-589a49583f08_xw78ra.webp" alt="Nike Air Max 270" onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+        <div class="producto-info">
+            <h6>Nike SB Dunk Low x Jarritos</h6><span class="precio">$1199.99</span>
         </div>
-    </section>
+    </div>
+    <div class="carrusel-item">
+        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1761072336/TENISDUNKLOWPANDAIMPORTADO_vcbmul.webp" alt="Nike Air Max 270" onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+        <div class="producto-info">
+            <h6>Nike SB Dunk panda IMPORTADO</h6><span class="precio">$1499.99</span>
+        </div>
+    </div>
+    <div class="carrusel-item">
+        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760145101/RETRO4CACTUSJACK_2_4c221ece-2ac2-4fda-9f22-883cdd1211df_gsw11b.webp" alt="New Balance 574" onerror="this.src='https://via.placeholder.com/400x300/2ecc71/ffffff?text=New+Balance+574'">
+        <div class="producto-info">
+            <h6>Jordan retro 4 Cactus Jack</h6><span class="precio">$1499.99 </span><span class="precio"><s>$1899.99</s> </span>
+        </div>
+    </div>
+    <div class="carrusel-item">
+        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760154469/RETRO1CHICAGORED_bo3v0h.webp" alt="Nike Air Max 270" onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+        <div class="producto-info">
+            <h6>Nike Jordan Air Retro 1 Chicago Red</h6>
+            <span class="precio">$1299.99</span>
+        </div>
+    </div>
+    <div class="carrusel-item">
+        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760149516/TRAVISLOWBLACKPHANTOM_2_s69oql.webp" alt="Nike Air Max 270" onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
+        <div class="producto-info">
+            <h6>Travis Low black phantom</h6><span class="precio">$1299.99</span>
+        </div>
+    </div>
+</div>
 	
     <!-- CARRUSEL DE PRODUCTOS NUEVOS -->
     <section class="carrusel-section">
@@ -675,6 +636,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
