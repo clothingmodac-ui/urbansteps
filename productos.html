@@ -31,7 +31,7 @@
             padding: 0 15px;
         }
 
-        /* --- HEADER Y NAV (Estilo Unificado) --- */
+        /* --- HEADER Y NAV (Ajustado para imagen y texto) --- */
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -46,15 +46,16 @@
             align-items: center;
             padding: 15px 50px;
         }
-        
-        .logo {
-            display: flex; 
-            align-items: center;
-            gap: 10px;
-        }
 
+        /* Contenedor del logo: permite que la imagen y el texto estén en línea */
+        .logo { 
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espacio entre la imagen y el texto */
+        }
+        
         .logo img {
-            height: 30px; 
+            height: 30px; /* Ajusta el tamaño de tu logo */
             width: auto;
         }
 
@@ -71,13 +72,43 @@
             margin: 0;
             padding: 0;
         }
+        /* ... (resto del CSS de menú) ... */
+        
+        /* RESPONSIVE (Ajuste del Header para móvil) */
+        @media (max-width: 768px) {
+            header nav {
+                /* Apila los elementos (logo y menú) verticalmente */
+                flex-direction: column; 
+                align-items: flex-start; /* Alinea a la izquierda */
+                padding: 15px 20px;
+            }
+            
+            /* Ocultar el menú en móvil para un diseño limpio (sin JS) */
+            header nav ul {
+                display: none; 
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .producto-card {
+                flex: 0 0 70%; 
+            }
+            .grid-beneficios {
+                grid-template-columns: 1fr 1fr;
+            }
+            .galeria-productos {
+                padding: 20px 0;
+            }
+        }
 
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--color-secundario);
-            font-weight: 600;
-            padding: 5px 0;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
+        @media (max-width: 480px) {
+            .grid-beneficios {
+                grid-template-columns: 1fr;
+            }
+            .producto-card {
+                flex: 0 0 90%; 
+            }
         }
 
         /* Destacar la página de Productos, ya que es la actual */
@@ -241,21 +272,19 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="img/logo1.png" alt="Logo URBAN STEPS">
-            </div>
-            <div class="logo">
-                <h2 style="color: #b19354;">URBAN STEPS</h2>
-            </div>
-            <ul>
-                <li><a href="URBANSTEPS.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="img/logo1.png" alt="Logo URBAN STEPS">
+            <h2 style="color: #b19354;">URBAN STEPS</h2>
+        </div>
+        <ul>
+            <li><a href="URBANSTEPS.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
 
     <main>
         <section class="hero-productos">
@@ -382,3 +411,4 @@
     </footer>
 </body>
 </html>
+
