@@ -8,7 +8,7 @@
     
     <style>
         /* =========================================
-           VARIABLES Y ESTILOS BASE (Todo en un solo lugar)
+           VARIABLES Y ESTILOS BASE (Generales y Específicos de Productos)
            ========================================= */
         :root {
             --color-primario: #b19354; /* Color dorado/ocre de tu marca */
@@ -31,7 +31,7 @@
             padding: 0 15px;
         }
 
-        /* --- HEADER Y NAV (Ajustado para imagen y texto) --- */
+        /* --- HEADER Y NAV (CORREGIDO) --- */
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -46,19 +46,21 @@
             align-items: center;
             padding: 15px 50px;
         }
-
-        /* Contenedor del logo: permite que la imagen y el texto estén en línea */
+        
+        /* Contenedor del logo con display flex */
         .logo { 
             display: flex;
             align-items: center;
-            gap: 10px; /* Espacio entre la imagen y el texto */
+            gap: 10px; 
         }
         
+        /* Estilos para la imagen del logo */
         .logo img {
-            height: 30px; /* Ajusta el tamaño de tu logo */
+            height: 30px; 
             width: auto;
         }
 
+        /* Estilo del texto "URBAN STEPS" */
         .logo h2 {
             color: var(--color-primario);
             margin: 0;
@@ -72,54 +74,19 @@
             margin: 0;
             padding: 0;
         }
-        /* ... (resto del CSS de menú) ... */
-        
-        /* RESPONSIVE (Ajuste del Header para móvil) */
-        @media (max-width: 768px) {
-            header nav {
-                /* Apila los elementos (logo y menú) verticalmente */
-                flex-direction: column; 
-                align-items: flex-start; /* Alinea a la izquierda */
-                padding: 15px 20px;
-            }
-            
-            /* Ocultar el menú en móvil para un diseño limpio (sin JS) */
-            header nav ul {
-                display: none; 
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .producto-card {
-                flex: 0 0 70%; 
-            }
-            .grid-beneficios {
-                grid-template-columns: 1fr 1fr;
-            }
-            .galeria-productos {
-                padding: 20px 0;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .grid-beneficios {
-                grid-template-columns: 1fr;
-            }
-            .producto-card {
-                flex: 0 0 90%; 
-            }
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--color-secundario);
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
         }
 
         /* Destacar la página de Productos, ya que es la actual */
         header nav ul li a:hover, header nav ul li a[href="productos.html"] {
             color: var(--color-primario);
             border-bottom: 2px solid var(--color-primario);
-        }
-
-        /* Ocultar el texto del logo si hay una imagen, o viceversa, para evitar duplicidad */
-        .logo:first-child + .logo { 
-            display: none; 
         }
 
         /* --- HERO DE PRODUCTOS --- */
@@ -146,6 +113,26 @@
         .productos-section {
             padding-bottom: 80px;
         }
+        
+        /* Título de sección */
+        .productos-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--color-secundario);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .productos-section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-primario);
+            margin: 10px auto 0;
+        }
+
 
         .marcas-grid {
             display: grid;
@@ -248,7 +235,7 @@
                 font-size: 1rem;
             }
 
-            /* Adaptación del NAV para móviles (arreglando el problema anterior) */
+            /* Adaptación del NAV (CORREGIDO) */
             header nav {
                 flex-direction: column; 
                 align-items: flex-start; 
@@ -272,19 +259,19 @@
     </style>
 </head>
 <body>
-<header>
-    <nav>
-        <div class="logo">
-            <img src="img/logo1.png" alt="Logo URBAN STEPS">
-            <h2 style="color: #b19354;">URBAN STEPS</h2>
-        </div>
-        <ul>
-            <li><a href="URBANSTEPS.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo1.png" alt="Logo URBAN STEPS">
+                <h2 style="color: var(--color-primario);">URBAN STEPS</h2>
+            </div>
+            <ul>
+                <li><a href="URBANSTEPS.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <section class="hero-productos">
@@ -294,6 +281,7 @@
 
         <section class="productos-section">
             <div class="container">
+                <h2>Catálogo por Marca</h2>
                 <div class="marcas-grid">
                     
                     <a href="nike.html" class="marca-card">
@@ -411,4 +399,3 @@
     </footer>
 </body>
 </html>
-
