@@ -7,328 +7,260 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
     
     <style>
-        /* =========================================
-           VARIABLES Y ESTILOS BASE (Mismos que en la página de inicio)
-           ========================================= */
-        :root {
-            --color-primario: #b19354; /* Color dorado/ocre de tu marca */
-            --color-secundario: #333;
-            --color-fondo: #f9f9f9;
-        }
+    /* =========================================
+       VARIABLES Y ESTILOS BASE
+       ========================================= */
+    :root {
+        --color-primario: #b19354; /* Color dorado/ocre de tu marca */
+        --color-secundario: #333;
+        --color-fondo: #f9f9f9;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--color-fondo);
-            color: var(--color-secundario);
-        }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--color-fondo);
+        color: var(--color-secundario);
+    }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* TÍTULOS DE SECCIÓN */
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: var(--color-secundario);
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--color-primario);
-            margin: 10px auto 0;
-        }
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    /* TÍTULOS DE SECCIÓN */
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: var(--color-secundario);
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    h2::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: var(--color-primario);
+        margin: 10px auto 0;
+    }
 
-         /* --- HEADER Y NAV --- */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    /* --- HEADER Y NAV (UNIFICADO Y COMPLETO) --- */
+    header {
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+    }
+    
+    /* Contenedor del logo con display flex (Para alinear imagen y texto) */
+    .logo { 
+        display: flex;
+        align-items: center;
+        gap: 10px; 
+    }
+    
+    /* Estilos para la imagen del logo */
+    .logo img {
+        height: 30px; 
+        width: auto;
+    }
+
+    /* Estilo del texto "URBAN STEPS" */
+    .logo h2 {
+        color: var(--color-primario);
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: var(--color-secundario);
+        font-weight: 600;
+        padding: 5px 0;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    /* Estilo de resaltado para la página actual */
+    header nav ul li a:hover, 
+    header nav ul li a[href="URBANSTEPS.html"], 
+    header nav ul li a[href="productos.html"],
+    header nav ul li a[href="contacto.html"] {
+        color: var(--color-primario);
+        border-bottom: 2px solid var(--color-primario);
+    }
+    
+    /* --- HERO DE PRODUCTOS (Solo para productos.html) --- */
+    .hero-productos {
+        background-color: var(--color-secundario);
+        color: white;
+        padding: 50px 0;
+        text-align: center;
+        margin-bottom: 40px;
+        border-bottom: 5px solid var(--color-primario);
+    }
+
+    .hero-productos h1 {
+        font-size: 3rem;
+        margin: 0 0 10px 0;
+    }
+
+    .hero-productos p {
+        font-size: 1.2rem;
+        opacity: 0.8;
+    }
+
+    /* --- ESTILOS DE GRID DE MARCAS (Solo para productos.html) --- */
+    .productos-section {
+        padding-top: 20px;
+        padding-bottom: 80px;
+    }
+
+    .marcas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+    
+    .marca-card {
+        background: white;
+        padding: 1.5rem; 
+        border-radius: 12px; 
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        border: 1px solid #eee;
+    }
+    
+    .marca-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .marca-imagen {
+        height: 70px; 
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .marca-imagen img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1)); 
+    }
+    
+    .marca-info h3 {
+        color: var(--color-secundario);
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+    }
+    
+    .contador-marca {
+        background: var(--color-primario); 
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    /* --- FOOTER Y WHATSAPP --- */
+    footer {
+        background-color: var(--color-secundario);
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 0.9rem;
+    }
+    
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25D366;
+        color: white;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    }
+    
+    /* =========================================
+       MEDIA QUERY PARA MÓVILES (UNIFICADO)
+       ========================================= */
+    @media (max-width: 768px) {
+        /* Adaptación del NAV */
         header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-        }
-        .logo h2 {
-            color: var(--color-primario);
-            margin: 0;
-            font-size: 1.8rem;
-        }
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--color-secundario);
-            font-weight: 600;
-            padding: 5px 0;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-        }
-        header nav ul li a:hover, header nav ul li a[href="URBANSTEPS.html"] {
-            color: var(--color-primario);
-            border-bottom: 2px solid var(--color-primario);
-        }                                                                                                                                                                                        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            header nav {
-                padding: 15px 20px;
-            }
-            header nav ul {
-                gap: 15px;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .producto-card {
-                flex: 0 0 70%; 
-            }
-            .grid-beneficios {
-                grid-template-columns: 1fr 1fr;
-            }
-            .galeria-productos {
-                padding: 20px 0;
-            }
-        }
-        @media (max-width: 480px) {
-            .grid-beneficios {
-                grid-template-columns: 1fr;
-            }
-            .producto-card {
-                flex: 0 0 90%; 
-            }
-        /* Contenedor del logo con display flex */
-        .logo { 
-            display: flex;
-            align-items: center;
-            gap: 10px; 
+            /* Eliminamos flex-direction: column y display: none del UL */
+            padding: 15px 20px; 
+            flex-direction: column; 
+            align-items: flex-start;
         }
         
-        /* Estilos para la imagen del logo */
-        .logo img {
-            height: 30px; 
-            width: auto;
-        }
-
-        /* Estilo del texto "URBAN STEPS" */
-        .logo h2 {
-            color: var(--color-primario);
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
         header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
+            display: none; /* Ocultamos el menú en móvil para simplificar el header */
         }
 
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--color-secundario);
-            font-weight: 600;
-            padding: 5px 0;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-        }
-
-        /* Destacar la página de Productos */
-        header nav ul li a:hover, header nav ul li a[href="productos.html"] {
-            color: var(--color-primario);
-            border-bottom: 2px solid var(--color-primario);
-        }
-
-        /* --- HERO DE PRODUCTOS (Cambio de fondo para diferenciar) --- */
-        .hero-productos {
-            background-color: var(--color-secundario);
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 5px solid var(--color-primario);
-        }
-
+        /* Adaptación del HERO */
         .hero-productos h1 {
-            font-size: 3rem;
-            margin: 0 0 10px 0;
+            font-size: 2.5rem;
         }
-
-        .hero-productos p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-        }
-
-        /* --- ESTILOS DE GRID DE MARCAS --- */
-        .productos-section {
-            padding-top: 20px;
-            padding-bottom: 80px;
-        }
-
+        
+        /* Asegurar que la cuadrícula de marcas se ajuste bien */
         .marcas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
+            grid-template-columns: 1fr; /* Una columna en móvil */
+            gap: 1rem;
         }
-        
-        .marca-card {
-            background: white;
-            padding: 1.5rem; 
-            border-radius: 12px; 
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            border: 1px solid #eee;
-        }
-        
-        .marca-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .marca-imagen {
-            height: 70px; 
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .marca-imagen img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-            /* Si las imágenes de tus logos tienen fondo blanco,
-               este filtro ayuda a que no se vean mal en fondos claros. */
-            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1)); 
-        }
-        
-        .marca-info h3 {
-            color: var(--color-secundario);
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-        }
-        
-        .contador-marca {
-            background: var(--color-primario); 
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-        }
+    }
 
-        /* --- FOOTER Y WHATSAPP (Mismos que en la página de inicio) --- */
-        footer {
-            background-color: var(--color-secundario);
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 0.9rem;
+    @media (max-width: 480px) {
+        /* Reglas específicas para pantallas muy pequeñas, si es necesario */
+        .grid-beneficios {
+            grid-template-columns: 1fr;
         }
-        
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-        }
-                } /* RESPONSIVE */
-        @media (max-width: 768px) {
-            header nav {
-                padding: 15px 20px;
-            }
-            header nav ul {
-                gap: 15px;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .producto-card {
-                flex: 0 0 70%; 
-            }
-            .grid-beneficios {
-                grid-template-columns: 1fr 1fr;
-            }
-            .galeria-productos {
-                padding: 20px 0;
-            }
-        }
-        @media (max-width: 480px) {
-            .grid-beneficios {
-                grid-template-columns: 1fr;
-            }
-            .producto-card {
-                flex: 0 0 90%; 
-            }
-        } 
-        
-        /* =========================================
-           MEDIA QUERY PARA MÓVILES (Mismo que en la página de inicio)
-           ========================================= */
-        @media (max-width: 768px) {
-            /* Adaptación del NAV */
-            header nav {
-                flex-direction: column; 
-                align-items: flex-start; 
-                padding: 15px 20px; 
-            }
-            
-            header nav ul {
-                display: none; 
-            }
-
-            /* Adaptación del HERO */
-            .hero-productos h1 {
-                font-size: 2.5rem;
-            }
-            
-            /* Asegurar que la cuadrícula de marcas se ajuste bien */
-            .marcas-grid {
-                grid-template-columns: 1fr; /* Una columna en móvil */
-                gap: 1rem;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 <header>
@@ -473,5 +405,6 @@
     </footer>
 </body>
 </html>
+
 
 
