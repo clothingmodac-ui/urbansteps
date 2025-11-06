@@ -314,123 +314,16 @@
                 flex: 0 0 90%; 
             }
         }
-
-        /* --- HEADER Y NAV (Estilos Base) --- */
-        header {
-            /* ... (mantener estilos de escritorio) ... */
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px; /* Padding de escritorio */
-        }
-        
-        /* Agregamos un estilo para que el logo y el texto no ocupen dos líneas */
-        .logo {
-            display: flex; 
-            align-items: center;
-            gap: 10px; /* Espacio entre el logo (imagen) y el texto */
-        }
-
-        .logo img {
-            height: 30px; /* Ajusta el tamaño de la imagen del logo */
-            width: auto;
-        }
-
-        .logo h2 {
-            color: var(--color-primario, #b19354);
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        /* Ocultar el texto del logo si hay una imagen */
-        .logo:first-child + .logo { 
-            /* Esto apunta al segundo div.logo */
-            display: none; 
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-        /* ... (mantener estilos de escritorio) ... */
-
-
-        /* =========================================
-           MEDIA QUERY PARA CELULARES (max-width: 768px)
-           ========================================= */
-        @media (max-width: 768px) {
-            /* 1. Reorganización del NAV */
-            header nav {
-                /* Cambiamos a columna para apilar el logo y el menú */
-                flex-direction: column; 
-                align-items: flex-start; /* Alineamos a la izquierda para un look más moderno */
-                padding: 15px 20px; /* Reducir padding en móvil */
-            }
-            
-            /* 2. Ocultar la lista de navegación para centrar el enfoque en el logo */
-            header nav ul {
-                display: none; /* Ocultamos temporalmente el menú para limpiar el header */
-                /* *Opcional*: Si quieres que se muestre debajo, cambia a flex-direction: column;
-                   y ajusta el ancho:
-                   flex-direction: column; 
-                   gap: 10px; 
-                   align-items: flex-start;
-                */
-            }
-            
-            /* 3. Mostrar solo el logo principal o el texto */
-            .logo:first-child { 
-                /* Mostrar el logo (imagen) y ocultar el texto */
-                display: flex;
-            }
-            .logo:first-child + .logo {
-                /* Ocultar el segundo div con el h2 para evitar duplicidad */
-                display: none; 
-            }
-
-            /* 4. Si solo usas el texto del logo, asegúrate de que esté centrado o visible */
-            .logo h2 {
-                font-size: 1.5rem; /* Hacemos el texto un poco más pequeño */
-            }
-
-            /* Si optas por mostrar el menú principal: */
-            /* header nav ul {
-                display: flex; 
-                flex-direction: column; 
-                width: 100%;
-                text-align: left;
-                margin-top: 10px;
-            }
-            header nav ul li {
-                width: 100%;
-                padding: 5px 0;
-                border-bottom: 1px solid #eee;
-            }
-            */
-
-            /* ... (Otros estilos responsive) ... */
-        }
     </style>
 </head>
 <body>
-    <header>
+<header>
         <nav>
             <div class="logo">
                 <img src="img/logo1.png" alt="Logo URBAN STEPS">
             </div>
             <div class="logo">
-                <h2 style="color: #ad8853;">URBAN STEPS</h2>
+                <h3 style="color: #ad8853;">URBAN STEPS</h3>
             </div>
             <ul>
                 <li><a href="URBANSTEPS.html">Inicio</a></li>
@@ -543,9 +436,14 @@
                 <h2>¿Por Qué Elegir URBAN STEPS?</h2>
                 <div class="grid-beneficios">
                     <div class="beneficio-card">
+                        <div class="beneficio-icon">📦</div>
+                        <h3>Envío Rápido y Seguro</h3>
+                        <p>Envíos garantizados y seguimiento en tiempo real.</p>
+                    </div>
+                    <div class="beneficio-card">
                         <div class="beneficio-icon">💸​</div>
                         <h3>Descuento por Volumen</h3>
-                        <p>Se aplica en compas 3 pares o más.</p>
+                        <p>10% de descuento en la compra de 3 pares o más.</p>
                     </div>
                     <div class="beneficio-card">
                         <div class="beneficio-icon">🛡️</div>
@@ -554,8 +452,8 @@
                     </div>
                     <div class="beneficio-card">
                         <div class="beneficio-icon">✅​</div>
-                        <h3>Lo mejor en calidad</h3>
-                        <p>Nacional, 1.1 e Importados.</p>
+                        <h3>Calidad 1:1 e Importados</h3>
+                        <p>Lo mejor en calidad Nacional, 1.1 e Importados.</p>
                     </div>
                 </div>
             </div>
@@ -573,5 +471,3 @@
     </footer>
 </body>
 </html>
-
-
