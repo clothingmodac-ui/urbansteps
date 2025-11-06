@@ -50,7 +50,7 @@
             margin: 10px auto 0;
         }
 
-        /* --- HEADER Y NAV (Ajuste del CSS de inicio) --- */
+         /* --- HEADER Y NAV --- */
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -58,14 +58,62 @@
             top: 0;
             z-index: 100;
         }
-
         header nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
         }
-        
+        .logo h2 {
+            color: var(--color-primario);
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--color-secundario);
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        header nav ul li a:hover, header nav ul li a[href="URBANSTEPS.html"] {
+            color: var(--color-primario);
+            border-bottom: 2px solid var(--color-primario);
+        }                                                                                                                                                                                        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header nav {
+                padding: 15px 20px;
+            }
+            header nav ul {
+                gap: 15px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .producto-card {
+                flex: 0 0 70%; 
+            }
+            .grid-beneficios {
+                grid-template-columns: 1fr 1fr;
+            }
+            .galeria-productos {
+                padding: 20px 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-beneficios {
+                grid-template-columns: 1fr;
+            }
+            .producto-card {
+                flex: 0 0 90%; 
+            }
         /* Contenedor del logo con display flex */
         .logo { 
             display: flex;
@@ -224,6 +272,35 @@
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
+                } /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header nav {
+                padding: 15px 20px;
+            }
+            header nav ul {
+                gap: 15px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .producto-card {
+                flex: 0 0 70%; 
+            }
+            .grid-beneficios {
+                grid-template-columns: 1fr 1fr;
+            }
+            .galeria-productos {
+                padding: 20px 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-beneficios {
+                grid-template-columns: 1fr;
+            }
+            .producto-card {
+                flex: 0 0 90%; 
+            }
+        } 
         
         /* =========================================
            MEDIA QUERY PARA MÓVILES (Mismo que en la página de inicio)
@@ -394,3 +471,4 @@
     </footer>
 </body>
 </html>
+
