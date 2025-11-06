@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - URBAN STEPS</title>
-    <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
     
     <style>
         /* =========================================
-           VARIABLES Y ESTILOS BASE
+           VARIABLES Y ESTILOS BASE (Todo en un solo lugar)
            ========================================= */
         :root {
             --color-primario: #b19354; /* Color dorado/ocre de tu marca */
@@ -112,14 +111,13 @@
             opacity: 0.8;
         }
 
-        /* --- ESTILOS DE GRID DE MARCAS (Optimizados) --- */
+        /* --- ESTILOS DE GRID DE MARCAS --- */
         .productos-section {
             padding-bottom: 80px;
         }
 
         .marcas-grid {
             display: grid;
-            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); -- Ajustado para mejor móvil */
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             padding: 2rem 0;
@@ -127,15 +125,15 @@
         
         .marca-card {
             background: white;
-            padding: 1.5rem; /* Reducido ligeramente */
-            border-radius: 12px; /* Ligeramente más suave */
+            padding: 1.5rem; 
+            border-radius: 12px; 
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
             display: block;
-            border: 1px solid #eee; /* Borde sutil */
+            border: 1px solid #eee;
         }
         
         .marca-card:hover {
@@ -144,7 +142,7 @@
         }
         
         .marca-imagen {
-            height: 70px; /* Ligeramente más pequeño */
+            height: 70px; 
             margin-bottom: 1rem;
             display: flex;
             justify-content: center;
@@ -155,18 +153,16 @@
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
-            /* Filtro de color sutil para marcas que usan solo negro/gris */
             filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
         }
         
         .marca-info h3 {
-            color: var(--color-secundario); /* Usar el color principal de texto */
+            color: var(--color-secundario);
             margin-bottom: 0.5rem;
             font-size: 1.4rem;
         }
         
         .contador-marca {
-            /* Usamos el color de marca aquí */
             background: var(--color-primario); 
             color: white;
             padding: 4px 12px;
@@ -207,10 +203,6 @@
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-        }
-        .whatsapp-float img {
-            width: 30px;
-            height: 30px;
         }
         
         /* =========================================
@@ -383,7 +375,7 @@
        class="whatsapp-float"
        target="_blank">
        <i class="fab fa-whatsapp"></i> 
-       </a>
+    </a>
 
     <footer>
         <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
