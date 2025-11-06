@@ -1,676 +1,465 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URBAN STEPS</title>
-    <link rel="stylesheet" href="css/style.css">
-	    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-	    <style>
-        /* Estilos específicos para la página de contacto */
-        .contacto-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN STEPS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* =========================================
+           ESTILOS BASE - REEMPLAZARÁN LOS ESTILOS ANTIGUOS
+           ========================================= */
+        :root {
+            --color-primario: #b19354; /* Color dorado/ocre de tu marca */
+            --color-secundario: #333;
+            --color-fondo: #f9f9f9;
+        }
 
-        .contacto-hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-fondo);
+            color: var(--color-secundario);
+        }
 
-        .contacto-hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-        .contacto-section {
-            padding: 80px 0;
-        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: var(--color-secundario);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-primario);
+            margin: 10px auto 0;
+        }
 
-        .contacto-section h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.2rem;
-            color: #333;
-        }
+        /* --- HEADER Y NAV --- */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-        .contacto-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
 
-        .info-contacto h3 {
-            margin-bottom: 20px;
-            color: #b19354;
-            font-size: 1.5rem;
-        }
+        .logo h2 {
+            color: var(--color-primario);
+            margin: 0;
+            font-size: 1.8rem;
+        }
 
-        .info-contacto p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
 
-        .contacto-icon {
-            margin-right: 12px;
-            font-size: 1.4rem;
-            width: 30px;
-            text-align: center;
-        }
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--color-secundario);
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
 
-        .whatsapp-icon {
-            color: #25D366;
-        }
+        header nav ul li a:hover, header nav ul li a[href="URBANSTEPS.html"] {
+            color: var(--color-primario);
+            border-bottom: 2px solid var(--color-primario);
+        }
 
-        .instagram-icon {
-            color: #E4405F;
-        }
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center 20%;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-        .email-icon {
-            color: #b19354;
-        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
 
-        .location-icon {
-            color: #b19354;
-        }
+        .hero-content p {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
 
-        .clock-icon {
-            color: #b19354;
-        }
+        .btn-hero {
+            background-color: var(--color-primario);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
 
-        .contacto-link {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
+        .btn-hero:hover {
+            background-color: #9a7f45;
+            transform: translateY(-2px);
+        }
 
-        .contacto-link:hover {
-            color: #b19354;
-        }
+        /* =========================================
+           NUEVA GALERÍA DESPLAZABLE (SIN JS)
+           ========================================= */
+        .galeria-scroll {
+            margin-bottom: 60px;
+            padding: 20px 0;
+        }
 
-        .mapa iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
+        .galeria-productos {
+            display: flex;
+            overflow-x: scroll; /* Permite el desplazamiento horizontal */
+            scroll-snap-type: x mandatory; /* Bloquea la vista en cada elemento */
+            padding: 20px 10px;
+            gap: 25px;
+            /* Estilos para ocultar la barra de desplazamiento (opcional) */
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
 
-        .formulario-contacto {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+        .galeria-productos::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
 
-        .formulario-contacto h3 {
-            margin-bottom: 20px;
-            color: #b19354;
-            font-size: 1.5rem;
-        }
+        .producto-card {
+            flex: 0 0 300px; /* Asegura que cada tarjeta tenga un ancho fijo */
+            scroll-snap-align: start; /* Fija la tarjeta al inicio de la ventana de desplazamiento */
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+        .producto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
+        .producto-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .producto-card:hover img {
+            transform: scale(1.05);
+        }
 
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
+        .producto-info {
+            padding: 15px;
+        }
 
-        .form-control:focus {
-            border-color: #b19354;
-            outline: none;
-        }
+        .producto-info h6 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+            color: var(--color-secundario);
+            font-weight: 600;
+        }
 
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
+        .precio {
+            display: inline-block;
+            font-size: 1.3rem;
+            color: var(--color-primario);
+            font-weight: bold;
+            margin-top: 5px;
+        }
 
-        .btn-enviar {
-            background-color: #b19354;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
+        .precio s {
+            font-size: 0.9rem;
+            color: #999;
+            margin-left: 10px;
+            font-weight: normal;
+        }
+        
+        /* --- SECCIÓN DE BENEFICIOS (MEJORADA CON GRID) --- */
+        .beneficios-section {
+            background-color: white;
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+        }
 
-        .btn-enviar:hover {
-            background-color: #9a7f45;
-        }
+        .grid-beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
 
-        .faq-section {
-            background-color: #f1f1f1;
-            padding: 80px 0;
-        }
+        .beneficio-card {
+            padding: 25px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .beneficio-card:hover {
+            background-color: var(--color-fondo);
+        }
 
-        .faq-section h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.2rem;
-            color: #333;
-        }
+        .beneficio-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
 
-        .faq-item {
-            background-color: white;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+        .beneficio-card h3 {
+            color: var(--color-primario);
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+        
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-secundario);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
 
-        .faq-pregunta {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 500;
-        }
+        /* --- WHATSAPP FLOAT --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+        }
 
-        .faq-pregunta:hover {
-            background-color: #f9f9f9;
-        }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header nav {
+                padding: 15px 20px;
+            }
+            header nav ul {
+                gap: 15px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .producto-card {
+                flex: 0 0 70%; 
+            }
+            .grid-beneficios {
+                grid-template-columns: 1fr 1fr;
+            }
+            .galeria-productos {
+                padding: 20px 0;
+            }
+        }
 
-        .faq-respuesta {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-respuesta {
-            padding: 0 20px 20px;
-            max-height: 500px;
-        }
-
-        .faq-icon {
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        .whatsapp-section {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            padding: 60px 0;
-        }
-
-        .whatsapp-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .whatsapp-info {
-            text-align: center;
-        }
-
-        .whatsapp-icon-large {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .whatsapp-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .whatsapp-btn {
-            background: white;
-            color: #25D366;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            background: #f0f0f0;
-        }
-
-        .whatsapp-contact {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-numbers p {
-            margin: 15px 0;
-            font-size: 1.1rem;
-        }
-
-        .whatsapp-phone {
-            color: #fff;
-            cursor: pointer;
-            text-decoration: underline;
-            transition: color 0.3s ease;
-        }
-
-        .whatsapp-phone:hover {
-            color: #d4f8e8;
-        }
-
-        .whatsapp-features {
-            margin-top: 30px;
-        }
-
-        .whatsapp-features ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .whatsapp-features li {
-            margin: 10px 0;
-            font-size: 1rem;
-        }
-
-        /* Botón flotante de WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .contacto-grid, .whatsapp-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contacto-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-                bottom: 15px;
-                right: 15px;
-            }
-        }
-    </style>
+        @media (max-width: 480px) {
+            .grid-beneficios {
+                grid-template-columns: 1fr;
+            }
+            .producto-card {
+                flex: 0 0 90%; 
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <!-- CAMBIA ESTA PARTE -->
-            <div class="logo">
-                <img src="img/logo1.png" alt="Logo Mi Catálogo" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="logo-text" style="display: none;">URBAN STEPS</span>
-            </div>
-			<div class="logo">
-				<h2 style="color: #b19354;">URBAN STEPS </h2>
-				
-            </div>
-            <ul>
-                <li><a href="URBANSTEPS.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <nav>
+            <div class="logo">
+                <h2 style="color: #b19354;">URBAN STEPS</h2>
+            </div>
+            <ul>
+                <li><a href="URBANSTEPS.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
+    <main>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Bienvenido a Nuestro Catálogo</h1>
-            <p>Descubre las mejores marcas de calzado deportivo y casual</p>
-            <a href="productos.html" class="btn-hero">Ver Productos</a>
-        </div>
-		
-    </section>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>El Estilo Urbano a tus Pies</h1>
+                <p>Descubre las colecciones exclusivas de calzado deportivo y casual</p>
+                <a href="productos.html" class="btn-hero">Ver Catálogo Completo</a>
+            </div>
+        </section>
 
-    <!-- CARRUSEL DE PRODUCTOS DESTACADOS -->
-    <section class="carrusel-section">
-        <div class="container">
-            <h2>Productos Destacados</h2>
-            
-            <div class="carrusel-container">
-                <!-- Botones de navegación -->
-                <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-                <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
-                
-                <!-- Contenedor del carrusel -->
-                <div class="carrusel">
-                    <!-- Producto 1 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760146825/CANVAS_00003_15028165-e1fd-4d36-846f-589a49583f08_xw78ra.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Nike SB Dunk Low x Jarritos</h6><span class="precio">$1199.99</span>
-                            
-                        </div>
-                    </div>
-                      <!-- Producto 2 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1761072336/TENISDUNKLOWPANDAIMPORTADO_vcbmul.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Nike SB Dunk panda IMPORTADO</h6><span class="precio">$1499.99</span>
-                            
-                        </div>
-                    </div>                  
-                    
-                    
-                    <!-- Producto 3 -->
-                    <div class="carrusel-item">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760145101/RETRO4CACTUSJACK_2_4c221ece-2ac2-4fda-9f22-883cdd1211df_gsw11b.webp" alt="New Balance 574" 
-                             onerror="this.src='https://via.placeholder.com/400x300/2ecc71/ffffff?text=New+Balance+574'">
-                        <div class="producto-info">
-                            <h6>Jordan retro 4 Cactus Jack</h6><span class="precio">$1499.99 </span><span class="precio"><s>$1899.99</s> </span>
-                            
-                        </div>
-                    </div>
-                
-				<!-- Producto 4 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760154469/RETRO1CHICAGORED_bo3v0h.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Nike Jordan Air Retro 1 Chicago Red</h6><span class="precio">$1299.99</span>
-                        </div>
-                    </div>
-					<!-- Producto 5 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760149516/TRAVISLOWBLACKPHANTOM_2_s69oql.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Travis Low black phantom</h6><span class="precio">$1299.99</span>
-                            
-                        </div>
-                    </div>
-					
-					
-					
-                </div>
-                <!-- Indicadores/puntos -->
-                <div class="carrusel-indicadores">
-                    <span class="indicador active" onclick="irASlide(0)"></span>
-                    <span class="indicador" onclick="irASlide(1)"></span>
-                    <span class="indicador" onclick="irASlide(2)"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-	
-    <!-- CARRUSEL DE PRODUCTOS NUEVOS -->
-    <section class="carrusel-section">
-        <div class="container">
-            <h2>Productos Nuevos</h2>
-            
-            <div class="carrusel-container">
-                <!-- Botones de navegación -->
-                <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
-                <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
-                
-                <!-- Contenedor del carrusel -->
-                <div class="carrusel">
-                    <!-- Producto 1 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753188/CANVAS_00002_8_9fb3d44c-c7fd-43a6-a60c-e868e7000d15_hzjsdj.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Air Force 1 DIOR lila</h6><span class="precio">$799.99</span>
-                            
-                        </div>
-                    </div>
-                    <!-- Producto 2 -->
-           <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753407/CANVAS_00001_a97cc2fc-6ab7-4a29-a1db-9bf6fa3863cf_w3bkfu.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Air Force 1 DIOR negro</h6><span class="precio">$799.99</span>
-                            
-                        </div>
-                    </div>
-                
-				<!-- Producto 3 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753751/HELLOKITTYBLANCONEGROROSA_1_cgvglw.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Air Retro 1 Hello Kitty</h6> <span class="precio">$1099.99</span>
-                        </div>
-                    </div>
-                      <!-- Producto 4 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1761072336/TENISDUNKLOWPANDAIMPORTADO_vcbmul.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Nike SB Dunk panda IMPORTADO</h6><span class="precio">$1499.99</span>
-                            
-                        </div>
-                    </div> 
-					<!-- Producto 5 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1762386718/380BLANCOTOTAL_99feb8bf-3c8e-4b7e-9e47-84ed04fba4ff_camrdr.webp" alt="Nike Air Max 270" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>Lacoste Lerond</h6><span class="precio">$899.99</span>
-                            
-                        </div>
-                    </div>
-					<!-- Producto 6 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1762389983/SUPERSTARHELLOKITTYFLORES_2_srkzge.webp" alt="superstar" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>superstar hello kitty flores</h6><span class="precio">$899.99</span>
-                 
-                        </div>
-                    </div>
-					<!-- Producto 6 -->
-                    <div class="carrusel-item active">
-                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1762390139/CANVAS_00047_icfxa5.webp" alt="superstar" 
-                             onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
-                        <div class="producto-info">
-                            <h6>superstar hello kitty </h6><span class="precio">$969.99</span>
-                            
-                        </div>
-                    </div>
-               
-					
-					
-            
-                <!-- Indicadores/puntos -->
-                <div class="carrusel-indicadores">
-                    <span class="indicador active" onclick="irASlide(0)"></span>
-                    <span class="indicador" onclick="irASlide(1)"></span>
-                    <span class="indicador" onclick="irASlide(2)"></span>
-                </div>
-            </div>
-				</div>
-        </div>
-    </section>
-    <!-- SECCIÓN DE BENEFICIOS -->
-    <section class="beneficios-section">
-        <div class="container">
-            <h2>¿Por Qué Elegir urban steps?</h2>
-            <div class="grid-beneficios">
-                <div class="beneficio-card">
-                    <div class="beneficio-icon">🚚</div>
-                    <h3>Envío Gratis</h3>
-                    <p>En compras mayores a 3 pares</p>
-                </div>
-                <div class="beneficio-card">
-                    <div class="beneficio-icon">💲​</div>
-                    <h3>Descuento del 10%</h3>
-                    <p>En compra de 3 pares se aplica 10% de descuento</p>
-                </div>
-                <div class="beneficio-card">
-                    <div class="beneficio-icon">🛡️</div>
-                    <h3>Garantía</h3>
-                    <p>6 meses en todos nuestros productos</p>
-                </div>
-                <div class="beneficio-card">
-                    <div class="beneficio-icon">💳</div>
-                    <h3>Pago Seguro</h3>
-                    <p>Transacciones 100% protegidas</p>
-                </div>
-				<div class="beneficio-card">
-                    <div class="beneficio-icon">✅​</div>
-                    <h3>Lo mejor en CALIDAD</h3>
-                    <p>Nacionales, Calidad 1.1 e Importados</p>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
+        <section class="galeria-scroll">
+            <div class="container">
+                <h2>👟 Productos Destacados</h2>
+                
+                <div class="galeria-productos">
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760146825/CANVAS_00003_15028165-e1fd-4d36-846f-589a49583f08_xw78ra.webp" alt="Nike SB Dunk Low x Jarritos" onerror="this.src='https://via.placeholder.com/300x250/b19354/ffffff?text=Producto+1'">
+                        <div class="producto-info">
+                            <h6>Nike SB Dunk Low x Jarritos</h6>
+                            <span class="precio">$1199.99</span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1761072336/TENISDUNKLOWPANDAIMPORTADO_vcbmul.webp" alt="Nike SB Dunk panda IMPORTADO" onerror="this.src='https://via.placeholder.com/300x250/555/ffffff?text=Producto+2'">
+                        <div class="producto-info">
+                            <h6>Nike SB Dunk panda IMPORTADO</h6>
+                            <span class="precio">$1499.99</span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760145101/RETRO4CACTUSJACK_2_4c221ece-2ac2-4fda-9f22-883cdd1211df_gsw11b.webp" alt="Jordan retro 4 Cactus Jack" onerror="this.src='https://via.placeholder.com/300x250/b19354/ffffff?text=Producto+3'">
+                        <div class="producto-info">
+                            <h6>Jordan retro 4 Cactus Jack</h6>
+                            <span class="precio">$1499.99 </span><span class="precio"><s>$1899.99</s> </span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760154469/RETRO1CHICAGORED_bo3v0h.webp" alt="Nike Jordan Air Retro 1 Chicago Red" onerror="this.src='https://via.placeholder.com/300x250/555/ffffff?text=Producto+4'">
+                        <div class="producto-info">
+                            <h6>Nike Jordan Air Retro 1 Chicago Red</h6>
+                            <span class="precio">$1299.99</span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760149516/TRAVISLOWBLACKPHANTOM_2_s69oql.webp" alt="Travis Low black phantom" onerror="this.src='https://via.placeholder.com/300x250/b19354/ffffff?text=Producto+5'">
+                        <div class="producto-info">
+                            <h6>Travis Low black phantom</h6>
+                            <span class="precio">$1299.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="galeria-scroll">
+            <div class="container">
+                <h2>✨ Novedades en la Tienda</h2>
+                
+                <div class="galeria-productos">
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753188/CANVAS_00002_8_9fb3d44c-c7fd-43a6-a60c-e868e7000d15_hzjsdj.webp" alt="Air Force 1 DIOR lila" onerror="this.src='https://via.placeholder.com/300x250/555/ffffff?text=Novedad+1'">
+                        <div class="producto-info">
+                            <h6>Air Force 1 DIOR lila</h6>
+                            <span class="precio">$799.99</span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753407/CANVAS_00001_a97cc2fc-6ab7-4a29-a1db-9bf6fa3863cf_w3bkfu.webp" alt="Air Force 1 DIOR negro" onerror="this.src='https://via.placeholder.com/300x250/b19354/ffffff?text=Novedad+2'">
+                        <div class="producto-info">
+                            <h6>Air Force 1 DIOR negro</h6>
+                            <span class="precio">$799.99</span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753751/HELLOKITTYBLANCONEGROROSA_1_cgvglw.webp" alt="Air Retro 1 Hello Kitty" onerror="this.src='https://via.placeholder.com/300x250/555/ffffff?text=Novedad+3'">
+                        <div class="producto-info">
+                            <h6>Air Retro 1 Hello Kitty</h6>
+                            <span class="precio">$1099.99</span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1762386718/380BLANCOTOTAL_99feb8bf-3c8e-4b7e-9e47-84ed04fba4ff_camrdr.webp" alt="Lacoste Lerond" onerror="this.src='https://via.placeholder.com/300x250/b19354/ffffff?text=Novedad+4'">
+                        <div class="producto-info">
+                            <h6>Lacoste Lerond</h6>
+                            <span class="precio">$899.99</span>
+                        </div>
+                    </div>
+                    <div class="producto-card">
+                        <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1762389983/SUPERSTARHELLOKITTYFLORES_2_srkzge.webp" alt="superstar hello kitty flores" onerror="this.src='https://via.placeholder.com/300x250/555/ffffff?text=Novedad+5'">
+                        <div class="producto-info">
+                            <h6>Superstar Hello Kitty Flores</h6>
+                            <span class="precio">$899.99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="beneficios-section">
+            <div class="container">
+                <h2>¿Por Qué Elegir URBAN STEPS?</h2>
+                <div class="grid-beneficios">
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">💸​</div>
+                        <h3>Descuento por Volumen</h3>
+                        <p>Se aplica en compas 3 pares o más.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">🛡️</div>
+                        <h3>Garantía de Calidad</h3>
+                        <p>6 meses de garantía en todos nuestros productos.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">✅​</div>
+                        <h3>Lo mejor en calidad</h3>
+                        <p>Nacional, 1.1 e Importados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<!-- SCRIPT PARA EL CARRUSEL -->
-<script>
-// Carrusel functionality para index.html
-let slideIndex = 0;
-let intervalo;
-
-function mostrarSlide(n) {
-    const slides = document.getElementsByClassName("carrusel-item");
-    const indicadores = document.getElementsByClassName("indicador");
-    
-    // Ocultar todos los slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-    }
-    
-    // Remover active de todos los indicadores
-    for (let i = 0; i < indicadores.length; i++) {
-        indicadores[i].classList.remove("active");
-    }
-    
-    // Ajustar índice si se pasa de los límites
-    if (n >= slides.length) {
-        slideIndex = 0;
-    } else if (n < 0) {
-        slideIndex = slides.length - 1;
-    } else {
-        slideIndex = n;
-    }
-    
-    // Mostrar slide actual y activar indicador
-    slides[slideIndex].classList.add("active");
-    if (indicadores[slideIndex]) {
-        indicadores[slideIndex].classList.add("active");
-    }
-}
-
-function moverCarrusel(n) {
-    mostrarSlide(slideIndex + n);
-    resetAutoAvance();
-}
-
-function irASlide(n) {
-    mostrarSlide(n);
-    resetAutoAvance();
-}
-
-// Auto-avance cada 5 segundos
-function autoAvance() {
-    moverCarrusel(1);
-}
-
-function iniciarAutoAvance() {
-    intervalo = setInterval(autoAvance, 2000);
-}
-
-function resetAutoAvance() {
-    clearInterval(intervalo);
-    iniciarAutoAvance();
-}
-
-// Pausar auto-avance cuando el mouse está sobre el carrusel
-function configurarEventosCarrusel() {
-    const carruselContainer = document.querySelector('.carrusel-container');
-    if (carruelContainer) {
-        carruselContainer.addEventListener('mouseenter', () => {
-            clearInterval(intervalo);
-        });
-
-        carruselContainer.addEventListener('mouseleave', () => {
-            iniciarAutoAvance();
-        });
-    }
-}
-
-// Inicializar el carrusel cuando se carga la página
-document.addEventListener('DOMContentLoaded', function() {
-    mostrarSlide(1);
-    iniciarAutoAvance();
-    configurarEventosCarrusel();
-    
-    console.log('✅ Carrusel inicializado correctamente');
-});
-</script>
- <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos" 
-       class="whatsapp-float" 
-       target="_blank">
-       <img src="img/icons8-whatsapp-48.png">
-    </a>
-    <footer>
-        <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
-    </footer>
-
-
+    <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos"
+       class="whatsapp-float"
+       target="_blank">
+        <i class="fab fa-whatsapp"></i> 
+        </a>
+    
+    <footer>
+        <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
+    </footer>
 </body>
-
-</html>  
-
+</html>
