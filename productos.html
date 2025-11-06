@@ -4,56 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - URBAN STEPS</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    
     <style>
+        /* =========================================
+           VARIABLES Y ESTILOS BASE
+           ========================================= */
+        :root {
+            --color-primario: #b19354; /* Color dorado/ocre de tu marca */
+            --color-secundario: #333;
+            --color-fondo: #f9f9f9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-fondo);
+            color: var(--color-secundario);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* --- HEADER Y NAV (Estilo Unificado) --- */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+        
+        .logo {
+            display: flex; 
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 30px; 
+            width: auto;
+        }
+
+        .logo h2 {
+            color: var(--color-primario);
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--color-secundario);
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        /* Destacar la página de Productos, ya que es la actual */
+        header nav ul li a:hover, header nav ul li a[href="productos.html"] {
+            color: var(--color-primario);
+            border-bottom: 2px solid var(--color-primario);
+        }
+
+        /* Ocultar el texto del logo si hay una imagen, o viceversa, para evitar duplicidad */
+        .logo:first-child + .logo { 
+            display: none; 
+        }
+
+        /* --- HERO DE PRODUCTOS --- */
+        .hero-productos {
+            background-color: var(--color-secundario);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 5px solid var(--color-primario);
+        }
+
+        .hero-productos h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-productos p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        /* --- ESTILOS DE GRID DE MARCAS (Optimizados) --- */
+        .productos-section {
+            padding-bottom: 80px;
+        }
+
         .marcas-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); -- Ajustado para mejor móvil */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             padding: 2rem 0;
         }
         
         .marca-card {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
+            padding: 1.5rem; /* Reducido ligeramente */
+            border-radius: 12px; /* Ligeramente más suave */
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
             display: block;
+            border: 1px solid #eee; /* Borde sutil */
         }
         
         .marca-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         .marca-imagen {
-            height: 80px;
+            height: 70px; /* Ligeramente más pequeño */
             margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .marca-imagen img {
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
+            /* Filtro de color sutil para marcas que usan solo negro/gris */
+            filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1));
         }
         
         .marca-info h3 {
-            color: #2c3e50;
+            color: var(--color-secundario); /* Usar el color principal de texto */
             margin-bottom: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         
         .contador-marca {
-            background: #3498db;
+            /* Usamos el color de marca aquí */
+            background: var(--color-primario); 
             color: white;
-            padding: 5px 15px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* --- FOOTER Y WHATSAPP --- */
+        footer {
+            background-color: var(--color-secundario);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-float img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* =========================================
+           MEDIA QUERY PARA MÓVILES
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Adaptación del HERO */
+            .hero-productos h1 {
+                font-size: 2.5rem;
+            }
+            .hero-productos p {
+                font-size: 1rem;
+            }
+
+            /* Adaptación del NAV para móviles (arreglando el problema anterior) */
+            header nav {
+                flex-direction: column; 
+                align-items: flex-start; 
+                padding: 15px 20px; 
+            }
+            
+            header nav ul {
+                display: none; /* Ocultamos el menú principal para limpiar el header */
+            }
+            
+            .logo h2 {
+                font-size: 1.5rem;
+            }
+
+            /* Asegurar que la cuadrícula de marcas se ajuste bien */
+            .marcas-grid {
+                grid-template-columns: 1fr; /* Una columna en móvil */
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -64,7 +255,7 @@
                 <img src="img/logo1.png" alt="Logo URBAN STEPS">
             </div>
             <div class="logo">
-                <h2 style="color: #ad8853;">URBAN STEPS</h2>
+                <h2 style="color: #b19354;">URBAN STEPS</h2>
             </div>
             <ul>
                 <li><a href="URBANSTEPS.html">Inicio</a></li>
@@ -76,15 +267,14 @@
 
     <main>
         <section class="hero-productos">
-            <h1>Nuestras Marcas</h1>
-            <p>Selecciona una marca para ver todos sus productos</p>
+            <h1>Explora Nuestras Marcas 🚀</h1>
+            <p>Encuentra el estilo que te define con las colecciones más buscadas del momento.</p>
         </section>
 
         <section class="productos-section">
             <div class="container">
                 <div class="marcas-grid">
                     
-                    <!-- NIKE -->
                     <a href="nike.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="img/nike.png" alt="Nike">
@@ -96,7 +286,6 @@
                         </div>
                     </a>
 
-                    <!-- ADIDAS -->
                     <a href="adidas.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="img/adidas.png" alt="Adidas">
@@ -108,7 +297,6 @@
                         </div>
                     </a>
 
-                    <!-- PUMA -->
                     <a href="puma.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="img/puma.png" alt="Puma">
@@ -120,7 +308,6 @@
                         </div>
                     </a>
 
-                    <!-- VANS -->
                     <a href="vans.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="img/vans.png" alt="Vans">
@@ -132,7 +319,6 @@
                         </div>
                     </a>
 
-                    <!-- CONVERSE -->
                     <a href="converse.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="img/converse.png" alt="Converse">
@@ -144,7 +330,6 @@
                         </div>
                     </a>
 
-                    <!-- NEW BALANCE -->
                     <a href="new-balance.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="img/new-balance-logo-6.png" alt="New Balance">
@@ -156,7 +341,6 @@
                         </div>
                     </a>
 
-                    <!-- ON CLOUD -->
                     <a href="on-cloud.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="img/Oc.png" alt="On Cloud">
@@ -168,7 +352,6 @@
                         </div>
                     </a>
 
-                    <!-- SKECHERS -->
                     <a href="skechers.html" class="marca-card">
                         <div class="marca-imagen">
                             <img src="https://i.pinimg.com/564x/af/6c/cc/af6ccc6867a36693fbea48f03e90da00.jpg" alt="Skechers">
@@ -179,13 +362,13 @@
                             <span class="contador-marca">4 productos</span>
                         </div>
                     </a>
-                     <!-- Lacoste -->
+
                     <a href="lacoste.html" class="marca-card">
                         <div class="marca-imagen">
-                            <img src="https://cdn.worldvectorlogo.com/logos/lacoste-1.svg" alt="Adidas">
+                            <img src="https://cdn.worldvectorlogo.com/logos/lacoste-1.svg" alt="Lacoste">
                         </div>
                         <div class="marca-info">
-                            <h3>Lacoste</h3></h3>
+                            <h3>LACOSTE</h3>
                             <p>Elegancia y comodidad</p>
                             <span class="contador-marca">8 productos</span>
                         </div>
@@ -196,16 +379,14 @@
         </section>
     </main>
 
-    <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos" class="whatsapp-float" target="_blank">
-        <img src="img/icons8-whatsapp-48.png" alt="WhatsApp">
-    </a>
+    <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos"
+       class="whatsapp-float"
+       target="_blank">
+       <i class="fab fa-whatsapp"></i> 
+       </a>
 
-<footer>
+    <footer>
         <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
     </footer>
 </body>
 </html>
-
-
-
-
