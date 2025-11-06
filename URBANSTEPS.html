@@ -426,8 +426,7 @@
                         <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760154469/RETRO1CHICAGORED_bo3v0h.webp" alt="Nike Air Max 270" 
                              onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
                         <div class="producto-info">
-                            <h6>Nike Jordan Air Retro 1 Chicago Red</h6>
-                            <span class="precio">$1299.99</span>
+                            <h6>Nike Jordan Air Retro 1 Chicago Red</h6><span class="precio">$1299.99</span>
                         </div>
                     </div>
 					<!-- Producto 5 -->
@@ -489,8 +488,7 @@
                         <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1760753751/HELLOKITTYBLANCONEGROROSA_1_cgvglw.webp" alt="Nike Air Max 270" 
                              onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
                         <div class="producto-info">
-                            <h6>Air Retro 1 Hello Kitty</h6>
-                            <span class="precio">$1099.99</span>
+                            <h6>Air Retro 1 Hello Kitty</h6> <span class="precio">$1099.99</span>
                         </div>
                     </div>
                       <!-- Producto 4 -->
@@ -516,8 +514,8 @@
                         <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1762389983/SUPERSTARHELLOKITTYFLORES_2_srkzge.webp" alt="superstar" 
                              onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
                         <div class="producto-info">
-                            <h6>Lsuperstar hello kitty flores</h6><span class="precio">$899.99</span>
-                            
+                            <h6>superstar hello kitty flores</h6><span class="precio">$899.99</span>
+                 
                         </div>
                     </div>
 					<!-- Producto 6 -->
@@ -525,7 +523,7 @@
                         <img src="https://res.cloudinary.com/dinryd5kv/image/upload/v1762390139/CANVAS_00047_icfxa5.webp" alt="superstar" 
                              onerror="this.src='https://via.placeholder.com/400x300/3498db/ffffff?text=Nike+Air+Max'">
                         <div class="producto-info">
-                            <h6>Lsuperstar hello kitty </h6><span class="precio">$969.99</span>
+                            <h6>superstar hello kitty </h6><span class="precio">$969.99</span>
                             
                         </div>
                     </div>
@@ -626,11 +624,11 @@ function irASlide(n) {
 
 // Auto-avance cada 5 segundos
 function autoAvance() {
-    moverCarrusel(1);
+    moverCarrusel(2);
 }
 
 function iniciarAutoAvance() {
-    intervalo = setInterval(autoAvance, 3000);
+    intervalo = setInterval(autoAvance, 2000);
 }
 
 function resetAutoAvance() {
@@ -654,7 +652,7 @@ function configurarEventosCarrusel() {
 
 // Inicializar el carrusel cuando se carga la página
 document.addEventListener('DOMContentLoaded', function() {
-    mostrarSlide(0);
+    mostrarSlide(1);
     iniciarAutoAvance();
     configurarEventosCarrusel();
     
@@ -675,3 +673,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>  
+
