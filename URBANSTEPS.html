@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URBAN STEPS</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -47,49 +48,6 @@
             height: 3px;
             background-color: var(--color-primario);
             margin: 10px auto 0;
-        }
-
-        /* --- HEADER Y NAV --- */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-        }
-
-        .logo h2 {
-            color: var(--color-primario);
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--color-secundario);
-            font-weight: 600;
-            padding: 5px 0;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-        }
-
-        header nav ul li a:hover, header nav ul li a[href="URBANSTEPS.html"] {
-            color: var(--color-primario);
-            border-bottom: 2px solid var(--color-primario);
         }
 
         /* --- HERO SECTION --- */
@@ -278,20 +236,9 @@
             transform: scale(1.1);
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
-        
-        .whatsapp-float img {
-            width: 30px;
-            height: 30px;
-        }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            header nav {
-                padding: 15px 20px;
-            }
-            header nav ul {
-                gap: 15px;
-            }
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -317,16 +264,15 @@
     </style>
 </head>
 <body>
-<header>
+    <!-- HEADER CON EL ARCHIVO EXTERNO -->
+    <header>
         <nav>
-            <div class="logo">
-                <img src="img/logo1.png" alt="Logo URBAN STEPS">
+            <div class="logo-container">
+                <img src="img/logo1.png" alt="Logo URBAN STEPS" class="logo-img">
+                <h1 class="logo-text">URBAN STEPS</h1>
             </div>
-            <div class="logo">
-                <h4 style="color: #ad8853;">URBAN STEPS</h4>
-            </div>
-            <ul>
-                <li><a href="URBANSTEPS.html">Inicio</a></li>
+            <ul class="nav-menu">
+                <li><a href="URBANSTEPS.html" class="active">Inicio</a></li>
                 <li><a href="productos.html">Productos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
@@ -459,7 +405,7 @@
        class="whatsapp-float"
        target="_blank">
         <i class="fab fa-whatsapp"></i> 
-        </a>
+    </a>
     
     <footer>
         <h6>&copy; 2025 AC_URBANSTEPS. Todos los derechos reservados.</h6>
