@@ -11,73 +11,6 @@ body {
     color: #333;
 }
 
-/* Header styles */
-header {
-    background: #808080;
-    color: white;
-    padding: 0.5rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    height: 100px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    height: 100px;
-}
-
-.logo img {
-    height: 100%;
-    width: auto;
-    max-height: 100px;
-    min-height: 40px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.05);
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #3498db;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: #3498db;
-}
-
-nav a.active {
-    color: #3498db;
-    border-bottom: 2px solid #3498db;
-}
 
 /* Página de Productos */
 .hero-productos {
@@ -1094,4 +1027,5 @@ footer .container {
     background: #3498db !important;
     color: white !important;
     border-color: #3498db !important;
+
 }
