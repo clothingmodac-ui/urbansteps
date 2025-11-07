@@ -49,7 +49,7 @@
             margin: 10px auto 0;
         }
 
-        /* --- HEADER Y NAV (EXACTAMENTE IGUAL A URBAN STEPS) --- */
+        /* --- HEADER Y NAV (EXACTAMENTE IGUAL A URBAN STEPS CON LOGO) --- */
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -65,7 +65,21 @@
             padding: 15px 50px;
         }
 
-        .logo h2 {
+        /* CONTENEDOR DEL LOGO COMO EN URBAN STEPS */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ESTILO PARA LA IMAGEN DEL LOGO */
+        .logo img {
+            height: 30px; /* Mismo tamaño que en URBAN STEPS */
+            width: auto;
+        }
+
+        /* ESTILO PARA EL TEXTO DEL LOGO */
+        .logo h4 {
             color: var(--color-primario);
             margin: 0;
             font-size: 1.8rem;
@@ -284,6 +298,14 @@
                 gap: 15px;
             }
             
+            .logo img {
+                height: 25px; /* Ajuste para móvil */
+            }
+            
+            .logo h4 {
+                font-size: 1.5rem; /* Ajuste para móvil */
+            }
+            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -306,15 +328,30 @@
             .grid-beneficios {
                 grid-template-columns: 1fr;
             }
+            
+            .logo {
+                gap: 8px;
+            }
+            
+            .logo img {
+                height: 22px;
+            }
+            
+            .logo h4 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER IDÉNTICO AL DE URBAN STEPS -->
+    <!-- HEADER IDÉNTICO AL DE URBAN STEPS CON LOGO -->
     <header>
         <nav>
             <div class="logo">
-                <h2>URBAN STEPS</h2>
+                <img src="img/logo1.png" alt="Logo URBAN STEPS">
+            </div>
+            <div class="logo">
+                <h4 style="color: #ad8853;">URBAN STEPS</h4>
             </div>
             <ul>
                 <li><a href="URBANSTEPS.html">Inicio</a></li>
