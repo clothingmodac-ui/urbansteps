@@ -27,12 +27,12 @@ header nav {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
 }
 
-/* ESTILO PARA LA IMAGEN DEL LOGO */
+/* ESTILO PARA LA IMAGEN DEL LOGO - MÁS GRANDE */
 .logo-img {
-    height: 35px;
+    height: 45px; /* Aumentado de 35px a 45px */
     width: auto;
     object-fit: contain;
 }
@@ -41,7 +41,7 @@ header nav {
 .logo-text {
     color: var(--color-primario);
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2rem; /* Un poco más grande para equilibrar */
     font-weight: bold;
 }
 
@@ -76,15 +76,15 @@ header nav {
     }
     
     .logo-container {
-        gap: 10px;
+        gap: 12px;
     }
     
     .logo-img {
-        height: 30px;
+        height: 38px; /* Aumentado para móvil */
     }
     
     .logo-text {
-        font-size: 1.5rem;
+        font-size: 1.7rem; /* Ajustado para móvil */
     }
     
     .nav-menu {
@@ -94,11 +94,11 @@ header nav {
 
 @media (max-width: 480px) {
     .logo-text {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
     
     .logo-img {
-        height: 25px;
+        height: 35px; /* Aumentado para móvil pequeño */
     }
     
     .nav-menu {
