@@ -8,10 +8,10 @@
     
     <style>
         /* =========================================
-           ESTILOS BASE
+           ESTILOS BASE - IDÉNTICOS A URBAN STEPS
            ========================================= */
         :root {
-            --color-primario: #b19354;
+            --color-primario: #b19354; /* Color dorado/ocre de tu marca */
             --color-secundario: #333;
             --color-fondo: #f9f9f9;
         }
@@ -49,7 +49,7 @@
             margin: 10px auto 0;
         }
 
-        /* --- HEADER Y NAV (CON ESTILOS PARA EL LOGO CON IMAGEN) --- */
+        /* --- HEADER Y NAV (EXACTAMENTE IGUAL A URBAN STEPS) --- */
         header {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -65,27 +65,10 @@
             padding: 15px 50px;
         }
 
-        /* CONTENEDOR DEL LOGO CON IMAGEN Y TEXTO */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* ESTILOS PARA LA IMAGEN DEL LOGO */
-        .logo-img {
-            height: 40px; /* Altura controlada */
-            width: auto;
-            max-width: 120px; /* Ancho máximo */
-            object-fit: contain;
-        }
-
-        /* ESTILOS PARA EL TEXTO DEL LOGO */
-        .logo-text {
+        .logo h2 {
             color: var(--color-primario);
             margin: 0;
             font-size: 1.8rem;
-            font-weight: bold;
         }
 
         header nav ul {
@@ -110,7 +93,7 @@
             border-bottom: 2px solid var(--color-primario);
         }
 
-        /* --- RESTO DE TUS ESTILOS (HERO, MARCAS, ETC.) --- */
+        /* --- HERO SECTION (ADAPTADO PARA PRODUCTOS) --- */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
@@ -221,7 +204,7 @@
             display: inline-block;
         }
 
-        /* --- BENEFICIOS SECTION --- */
+        /* --- BENEFICIOS SECTION (MANTENIENDO CONSISTENCIA) --- */
         .beneficios-section {
             background-color: white;
             padding: 60px 0;
@@ -291,23 +274,10 @@
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE (IGUAL A URBAN STEPS) */
         @media (max-width: 768px) {
             header nav {
                 padding: 15px 20px;
-            }
-            
-            .logo-container {
-                gap: 10px;
-            }
-            
-            .logo-img {
-                height: 35px;
-                max-width: 100px;
-            }
-            
-            .logo-text {
-                font-size: 1.5rem;
             }
             
             header nav ul {
@@ -329,15 +299,6 @@
         }
 
         @media (max-width: 480px) {
-            .logo-text {
-                font-size: 1.3rem;
-            }
-            
-            .logo-img {
-                height: 30px;
-                max-width: 80px;
-            }
-            
             .marcas-grid {
                 grid-template-columns: 1fr;
             }
@@ -349,11 +310,11 @@
     </style>
 </head>
 <body>
+    <!-- HEADER IDÉNTICO AL DE URBAN STEPS -->
     <header>
         <nav>
-            <div class="logo-container">
-                <img src="img/logo1.png" alt="Logo URBAN STEPS" class="logo-img">
-                <h4 class="logo-text">URBAN STEPS</h4>
+            <div class="logo">
+                <h2>URBAN STEPS</h2>
             </div>
             <ul>
                 <li><a href="URBANSTEPS.html">Inicio</a></li>
@@ -363,8 +324,14 @@
         </nav>
     </header>
 
-    <!-- El resto de tu contenido permanece igual -->
     <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Nuestras Marcas Exclusivas</h1>
+                <p>Descubre las mejores marcas de calzado urbano y deportivo</p>
+                <a href="#marcas" class="btn-hero">Explorar Marcas</a>
+            </div>
+        </section>
 
         <section class="productos-section" id="marcas">
             <div class="container">
@@ -474,7 +441,28 @@
             </div>
         </section>
 
-        
+        <section class="beneficios-section">
+            <div class="container">
+                <h2>¿Por Qué Elegir URBAN STEPS?</h2>
+                <div class="grid-beneficios">
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">💸​</div>
+                        <h3>Descuentos Exclusivos</h3>
+                        <p>En la compra de 3 pares o más se aplica descuento.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">🛡️</div>
+                        <h3>Garantía de Calidad</h3>
+                        <p>6 meses de garantía en todos nuestros productos.</p>
+                    </div>
+                    <div class="beneficio-card">
+                        <div class="beneficio-icon">✅​</div>
+                        <h3>Lo Mejor en Calidad</h3>
+                        <p>Nacional, 1.1 e Importados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos"
@@ -488,5 +476,3 @@
     </footer>
 </body>
 </html>
-
-
