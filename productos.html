@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos - URBAN STEPS</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
@@ -47,64 +48,6 @@
             height: 3px;
             background-color: var(--color-primario);
             margin: 10px auto 0;
-        }
-
-        /* --- HEADER Y NAV (EXACTAMENTE IGUAL A URBAN STEPS CON LOGO) --- */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-        }
-
-        /* CONTENEDOR DEL LOGO COMO EN URBAN STEPS */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* ESTILO PARA LA IMAGEN DEL LOGO */
-        .logo img {
-            height: 30px; /* Mismo tamaño que en URBAN STEPS */
-            width: auto;
-        }
-
-        /* ESTILO PARA EL TEXTO DEL LOGO */
-        .logo h4 {
-            color: var(--color-primario);
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        header nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--color-secundario);
-            font-weight: 600;
-            padding: 5px 0;
-            transition: color 0.3s ease, border-bottom 0.3s ease;
-        }
-
-        header nav ul li a:hover, 
-        header nav ul li a[href="productos.html"] {
-            color: var(--color-primario);
-            border-bottom: 2px solid var(--color-primario);
         }
 
         /* --- HERO SECTION (ADAPTADO PARA PRODUCTOS) --- */
@@ -288,24 +231,8 @@
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
         }
 
-        /* RESPONSIVE (IGUAL A URBAN STEPS) */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            header nav {
-                padding: 15px 20px;
-            }
-            
-            header nav ul {
-                gap: 15px;
-            }
-            
-            .logo img {
-                height: 25px; /* Ajuste para móvil */
-            }
-            
-            .logo h4 {
-                font-size: 1.5rem; /* Ajuste para móvil */
-            }
-            
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -328,49 +255,27 @@
             .grid-beneficios {
                 grid-template-columns: 1fr;
             }
-            
-            .logo {
-                gap: 8px;
-            }
-            
-            .logo img {
-                height: 22px;
-            }
-            
-            .logo h4 {
-                font-size: 1.3rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER IDÉNTICO AL DE URBAN STEPS CON LOGO -->
+    <!-- HEADER CON EL ARCHIVO EXTERNO -->
     <header>
         <nav>
-            <div class="logo">
-                <img src="img/logo1.png" alt="Logo URBAN STEPS">
+            <div class="logo-container">
+                <img src="img/logo1.png" alt="Logo URBAN STEPS" class="logo-img">
+                <h1 class="logo-text">URBAN STEPS</h1>
             </div>
-            <div class="logo">
-                <h4 style="color: #ad8853;">URBAN STEPS</h4>
-            </div>
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="URBANSTEPS.html">Inicio</a></li>
-                <li><a href="productos.html">Productos</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Nuestras Marcas Exclusivas</h1>
-                <p>Descubre las mejores marcas de calzado urbano y deportivo</p>
-                <a href="#marcas" class="btn-hero">Explorar Marcas</a>
-            </div>
-        </section>
-
-        <section class="productos-section" id="marcas">
+       <section class="productos-section" id="marcas">
             <div class="container">
                 <h2>Catálogo por Marca</h2>
                 <div class="marcas-grid">
@@ -478,28 +383,6 @@
             </div>
         </section>
 
-        <section class="beneficios-section">
-            <div class="container">
-                <h2>¿Por Qué Elegir URBAN STEPS?</h2>
-                <div class="grid-beneficios">
-                    <div class="beneficio-card">
-                        <div class="beneficio-icon">💸​</div>
-                        <h3>Descuentos Exclusivos</h3>
-                        <p>En la compra de 3 pares o más se aplica descuento.</p>
-                    </div>
-                    <div class="beneficio-card">
-                        <div class="beneficio-icon">🛡️</div>
-                        <h3>Garantía de Calidad</h3>
-                        <p>6 meses de garantía en todos nuestros productos.</p>
-                    </div>
-                    <div class="beneficio-card">
-                        <div class="beneficio-icon">✅​</div>
-                        <h3>Lo Mejor en Calidad</h3>
-                        <p>Nacional, 1.1 e Importados.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <a href="https://wa.me/525643915271?text=Hola,%20me%20interesa%20información%20sobre%20sus%20productos"
