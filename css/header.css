@@ -1,0 +1,111 @@
+/* =========================================
+   HEADER UNIFICADO PARA TODAS LAS PÁGINAS
+   ========================================= */
+:root {
+    --color-primario: #b19354;
+    --color-secundario: #333;
+    --color-fondo: #f9f9f9;
+}
+
+/* --- HEADER Y NAV --- */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+/* CONTENEDOR DEL LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ESTILO PARA LA IMAGEN DEL LOGO */
+.logo-img {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ESTILO PARA EL TEXTO DEL LOGO */
+.logo-text {
+    color: var(--color-primario);
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Estilo de resaltado para la página actual */
+.nav-menu li a:hover, 
+.nav-menu li a.active {
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-primario);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header nav {
+        padding: 15px 20px;
+    }
+    
+    .logo-container {
+        gap: 10px;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.3rem;
+    }
+    
+    .logo-img {
+        height: 25px;
+    }
+    
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-menu li a {
+        font-size: 0.9rem;
+    }
+}
